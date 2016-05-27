@@ -1,0 +1,138 @@
+﻿@model MES.Models.UserModel
+@using System.Data;
+@using System.Xml;
+@using MES.Services;
+@using MESIII;
+@{
+    //var TARGET_DOMAIN = Model.CURR_DOMAIN;
+    ////var TARGET_DOMAIN_NAME = CommonService.GetDomainName(Session["USER_DOMAIN"].ToString(), TARGET_DOMAIN);
+    //var TARGET_PACK = Model.CURR_PACKAGE;
+    //var TARGET_PRO = Model.CURR_PROGRAM;
+
+    //XmlDocument oUserPackage = new XmlDocument();
+    //oUserPackage.LoadXml(Session["USER_DOMAIN"].ToString());
+    //XmlNodeList ns = oUserPackage.SelectNodes("//root/USER_DOMAIN");
+
+    //XmlDocument xmldoc = (XmlDocument)ViewData["GUI_DATA"];
+    //XmlDocument xmlError = (XmlDocument)ViewData["ERROR_DATA"];
+    //var PART = TARGET_DOMAIN + "Domain";
+
+}
+<header class="header navbar navbar-fixed-top" role="banner">
+    <div class="container">
+        <div id="HeaderTool">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")" style="height: 48px;">
+                <img src="@Url.Content("~/assets/img/logo.gif")" alt="logo" />
+                <strong>实时二手信息</strong>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown user">
+                <a href="#" id="userdrop" class="dropdown-toggle" data-toggle="dropdown">
+                    @{string userpath = ""; if (Session["UserIcon"] == null) { userpath = "default.png"; } else { userpath = Session["UserIcon"].ToString(); }}
+                    <i><img class="userIcon" src="~/assets/userIcon/@userpath" /></i>
+                    @if (Session["UserName"] != null)
+                    {
+                        <span class="username">@Session["UserName"].ToString()</span>
+                    }
+                    else
+                    {
+                        <span class="username"></span>
+                    }
+                    <i class="icon-caret-down small"></i>
+                </a>
+                <ul class="dropdown-menu" id="userMenu">
+                    @if (Session["UserName"] == null)
+                    {
+                        <li><a href="#" id='PasswordModal' data-toggle="modal"><i class="icon-signin"></i>登陆</a></li>
+                        <li><a href="#"><i class="icon-pencil"></i>注册</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="#" data-toggle="modal" data-target="#modalPost"><i class="icon-user"></i>发表</a></li>
+                        <li><a href="@Url.Action("PostHistory","Manager")"><i class="icon-user-md"></i>个人中心</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:cap_logout();"><i class="icon-key"></i>退出</a></li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script>
+    $(function () {
+        $("#PasswordModal").click(function () {
+            cap_clear("#login_form");
+            $("#modalLogin .alert").hide().text('');
+            $("#modalLogin").modal('show');
+        });
+
+        $("#login_confirm").click(function () {
+            if ($("#login_form").valid()) {
+                $.ajax({
+                    url: "@Url.Action("Login", "Home")",
+                    type: "POST",
+                    async: false,
+                    dataType: "json",
+                    data: {
+                        UserNO: $("#txtUserNO").val(),
+                        PassWD: $("#txtPassWD").val()
+                    },
+                    success: function (data, textStatus, xhr) {
+                        if (data.msg == "success") {
+                            $("#userMenu").children().remove();
+                            var html="<li><a href='#' data-toggle='modal' id='PostMSG'><i class='icon-user'></i>发表</a></li>";
+                            html+="<li><a href=\"@Url.Action("PostHistory","Manager")\"><i class='icon-user-md'></i>个人中心</a></li>";
+                            html+="<li class='divider'></li>"
+                            html+=" <li><a href=\"javascript:cap_logout();\"><i class='icon-key'></i>退出</a></li>";
+                            $("#userMenu").append($(html));
+                            $("#userdrop .userIcon").prop("src", data.usericon);
+                            $("#userdrop .username").text(data.username);
+                            $("#modalLogin").modal('hide');
+                        }
+                        else if (data.msg == "fail") {
+                            $("#modalLogin .alert").show().text('用户名或密码错误');
+                        } else {
+                            cap_alert(data.error_desc);
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+
+    @*function cap_changpwd() {
+        if ($("#password-form").valid()) {
+            if ("@Session["LOGIN_NO"]" != $("#txtNewPwd").val()) {
+                $.ajax({
+                    url: "@Url.Action("TxChangePassword", "SYS")",
+                    type: "POST",
+                    async: false,
+                    dataType: "json",
+                    data: {
+                        "TxType": "C",
+                        "USER_ID": parseInt("@Session["USER_ID"]"),
+                        "NEW_PASSWORD": $("#txtNewPwd").val()
+                    },
+                    success: function (data, textStatus, xhr) {
+                        if (data.msg == "OK") {
+                            $('#passwordModal').modal('hide');
+                        }
+                        else {
+                            cap_alert(data.error_desc);
+                        }
+                    }
+                });
+            }
+            else {
+                $("#txtNewPwd").val("");
+                setTimeout("$('#txtNewPwd').focus()", 1000);
+                $(".alert").html("");
+                $(".alert").hide();
+                cap_alert("新密码不能与用户名相同!");
+            }
+        }
+    }*@
+</script>

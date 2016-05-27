@@ -1,0 +1,311 @@
+﻿@model MES.Models.UserModel
+@using System.Xml;
+@{
+    ViewBag.Title = Model.CURR_PROGRAM;
+}
+@Html.Partial("Title")
+
+<div id="lstData" class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="widget box">
+            <div class="widget-header">
+                <h4><i class="icon-reorder"></i></h4>
+                <div class="toolbar">
+                    <div class="btn-group">
+                        <a href="javascript:cap_edit('A',-1,'');" class="btn btn-sm btn-info">新增</a>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content no-padding table-responsive">
+                <table id="tblData" class="table table-hover table-striped table-bordered table-condensed table-high light-head">
+                    <thead>
+                        <tr class="tblHeader">
+                            <th>序号</th>
+                            <th>词语</th>
+                            <th>词语类型</th>
+                            <th>词语描述</th>
+                            <th class='text-center'>状态</th>
+                            <th class='text-center'>更新</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="row">
+                    <div class="table-footer" style="background-color: #fff;">
+                        <div class="col-sm-12 col-md-12">
+                            <div id="Pagination" class="pagination" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="edit01" class="row" style="display: none;">
+    <div class="col-sm-12 col-md-12">
+        <div class="widget box">
+            <div class="widget-header">
+                <h4>
+                    <i class="icon-reorder"></i>
+                    <span class="edit-title"></span>
+                </h4>
+                <input type="hidden" id="TxType" name="TxType" value="" />
+                <input type="hidden" id="txtWordID" value="-1" />
+            </div>
+            <div class="widget-content">
+                <form class="form-horizontal row-border" id="SenseWord-form" method="post">
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">词语<span class="required">*</span></label>
+                        <div class="col-sm-8 col-md-10">
+                            <input type="text" id="txtWordName" name="txtWordName" class="form-control required" placeholder="请输入词语" data-msg-required="请输入词语" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">词语类型<span class="required">*</span></label>
+                        <div class="col-sm-8 col-md-10">
+                            <select id="cboTypeNO" name="cboTypeNO" class="form-control required" placeholder="请选择词语类型" data-msg-required="请选择词语类型"></select>
+                            @*<input type="text" id="cboTypeNO" name="cboTypeNO" class="form-control required" placeholder="请输入词语类型" data-msg-required="请输入词语类型" />*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">词语描述<span class="required">*</span></label>
+                        <div class="col-sm-8 col-md-10">
+                            <input type="text" id="txtWordDesc" name="txtWordDesc" class="form-control required" placeholder="请输入词语描述" data-msg-required="请输入词语描述" />
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary pull-right" onclick="javascript:cap_save();">保存</button>
+                        <button type="button" class="btn btn-default pull-right" onclick="javascript:cap_close('lstData','edit01');">关闭</button>
+                    </div>
+                </form>
+            </div>
+            <div class="alert fade in alert-danger" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ConfirmMessage -->
+<div class="modal fade" id="ConfirmMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" id="lblConfirmClose" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="ConfirmH4" class="modal-title edit">确认提示</h4>
+            </div>
+            <div class="modal-body">
+                <label id="lblConfirmMessage" class="widget-header">
+                </label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="butConfirm" class="btn btn-info" onclick="MessageConfirm('0');">确认</button>
+                <button type="button" id="butCancel" class="btn btn-primary" onclick="MessageConfirm('1');">取消</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.ConfirmMessage -->
+
+<script type="text/javascript">
+    var obj_form = "#SenseWord-form";
+    var chkFlag = "0";
+    var chkName1 = "";
+    var sStatusNo = "";
+
+    $(function () {
+        nPageIndex = 0;
+        InitData(nPageIndex);
+    });
+
+    function InitData(nPageIndex) {
+        var tbody = "";
+        var RowCount = 0;
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("QrySenseWord001", "Manager")',
+            async: false,
+            dataType: 'json',
+            data: {
+                "PAGE_INDEX": (nPageIndex + 1),
+                "PAGE_SIZE": nPageSize,
+                "ORDER_BY": '',
+				"WordID":'-1',
+				"WordName":'',
+				"WordTypeNO":'',
+				"WordDesc":''
+            },
+            beforeSend: function () { $("#divload").show(); $("#Pagination").hide(); },
+            complete: function () { $("#divload").hide(); $("#Pagination").show(); },
+            success: function (data) {
+                $("#tblData tr:gt(0)").remove();
+                if (data.msg != "OK") {
+                    cap_alert(unescape(data.error_desc));
+                    return false;
+                }
+                else {
+                    RowCount = data.table_rows;
+                    var TOTAL_PAGE = parseInt(RowCount / nPageSize);
+                    if ((RowCount % nPageSize) != 0) { TOTAL_PAGE++; }
+                    if (nPageIndex >= TOTAL_PAGE) { nPageIndex = (TOTAL_PAGE - 1); }
+
+                    $.each(data.qrydata, function (i, item) {
+                        var _row = (nPageSize * nPageIndex + (i + 1)) + ".";
+                        var chk1 = "";
+                        if (item.StatusNO == "A") { chk1 = "checked"; }
+
+                        var trs = "<tr>";
+						trs += "<td>" + _row + "</td>";
+						trs += "<td>" + item.WordName + "</td>";
+						trs += "<td>" + item.TypeName + "</td>";
+						trs += "<td>" + item.WordDesc + "</td>";
+                        trs += "<td class='text-center'><div class='make-switch switch-small' id='chkStatusNO" + i + "' data-on='success' data-off='danger' data-on-label='启用'  data-off-label='禁用'><input name1='" + i + "'  type='checkbox' name='chk2' " + chk1 + " class='toggle' value='" +  item.WordID+ "'/></div></td>";
+                        trs += "<td class='text-center'><a href='javascript:cap_edit(\"U\",\"" + item.WordID+ "\");'  class='btn btn-sm btn-primary'>更新</a></td>";
+                        trs += "</tr>";
+                        tbody += trs;
+                    });
+                }
+                $("#tblData tbody").append(tbody);
+                $("#tblData tbody .make-switch").bootstrapSwitch({
+                }).on('switch-change', function (e, data) {
+                    chkName1 = $('#chkStatusNO' + $(data.el).attr("name1"));
+                    if (chkFlag == "0") {
+                        if (data.value == false) {
+                            chkFlag = "1";
+                            $('#chkStatusNO' + $(data.el).attr("name1")).bootstrapSwitch('setState', true);
+                            chkFlag = "0";
+                        }
+                        else {
+                            chkFlag = "1";
+                            $('#chkStatusNO' + $(data.el).attr("name1")).bootstrapSwitch('setState', false);
+                            chkFlag = "0";
+                        }
+                        cap_status($(data.el).val(), (data.value == true) ? "A" : "S");
+                    }
+                });
+            }
+        });
+        cap_pagination(RowCount);
+    }
+
+    function cap_status(WordID, STATUS_NO) {
+        varWordID = WordID;
+        sStatusNo = STATUS_NO;
+        MessageConfirm("2");
+    }
+
+    function MessageConfirm(value) {
+        $("#butConfirm").show();
+        $("#butCancel").show();
+        $("#ConfirmH4").html("确认提示框");
+        $("#lblConfirmMessage").html("确定要操作此项吗？");
+        if (value == "1") { $("#ConfirmMessage").modal('hide'); return false; } else { $("#ConfirmMessage").modal('show'); }
+        if (value == "0") {
+            $("#ConfirmMessage").modal('hide');
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("TxSenseWord001", "Manager")",
+                async: false,
+                dataType: "json",
+                data: {
+                    "TxType": 'C',
+                    "WordID": varWordID,
+					"WordName":'',
+					"WordTypeNO":'',
+					"WordDesc":'',
+                    "StatusNO": sStatusNo
+                },
+                beforeSend: function () { $("#divload").show(); },
+                complete: function () { $("#divload").hide(); },
+                success: function (data) {
+                    if (data.msg == "OK") {
+                        cap_close("lstData", "edit01");
+                        if (sStatusNo == "A") { chkFlag = "1"; $(chkName1).bootstrapSwitch('setState', true); } else { chkFlag = "1"; $(chkName1).bootstrapSwitch('setState', false); }
+                    }
+                    else {
+                        cap_alert(unescape(data.error_desc));
+                    }
+                }
+            });
+            chkFlag = "0";
+        }
+    }
+
+    function cap_edit(TxType, WordID) {
+        cap_clear(obj_form);
+        var sTitle = '标题' + ' - ';
+        $('#txtWordID').val('-1');
+        cap_Type('@Url.Action("QryTypeInfo001", "Manager")', 'SenseWord', '#cboTypeNO', '', 'CHOOSE', '', 'A');
+         $("#TxType").val(TxType);
+         switch (TxType) {
+             case "A":
+                 cap_close("edit01", "lstData");
+                 $(".edit-title").html(sTitle + '新增');
+                break;
+            case "U":
+                cap_close("edit01", "lstData");
+                $(".edit-title").html(sTitle + '更新');
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("QrySenseWord001", "Manager")',
+                    async: false,
+                    dataType: 'json',
+                    data: {
+                        "PAGE_INDEX": -1,
+                        "PAGE_SIZE": -1,
+                        "ORDER_BY": '',
+                        "WordID": WordID,
+						"WordName":'',
+						"WordTypeNO":'',
+						"WordDesc":'',
+                        "StatusNO": ''
+                    },
+                    success: function (data) {
+                        if (data.msg == "OK") {
+                            $.each(data.qrydata, function (i, item) {
+							$("#txtWordID").val(item.WordID);
+							$("#txtWordName").val(item.WordName);
+							$("#cboTypeNO").val(item.WordTypeNO);
+							$("#txtWordDesc").val(item.WordDesc);
+                            });
+                        }
+                        else {
+                            cap_alert(unescape(data.error_desc));
+                        }
+                    }
+                });
+                break;
+        }
+    }
+
+    function cap_save() {
+        if ($(obj_form).valid()) {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("TxSenseWord001", "Manager")",
+                async: false,
+                dataType: "json",
+                data: {
+                    "TxType": $("#TxType").val(),
+					"WordID":$("#txtWordID").val(),
+					"WordName":$("#txtWordName").val(),
+					"WordTypeNO":$("#cboTypeNO").val(),
+					"WordDesc":$("#txtWordDesc").val(),
+                    "StatusNO": ''
+                },
+                beforeSend: function () { $("#divload").show(); },
+                complete: function () { $("#divload").hide(); },
+                success: function (data) {
+                    if (data.msg == "OK") {
+                        cap_close("lstData", "edit01");
+                        InitData(nPageIndex);
+                    }
+                    else {
+                        cap_alert(unescape(data.error_desc));
+                    }
+                }
+            });
+        }
+    }
+
+</script>

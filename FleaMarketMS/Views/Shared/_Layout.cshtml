@@ -1,0 +1,350 @@
+﻿@using MES.Services;
+@using System.Xml;
+@{
+    var dtToday = DateTime.Now.ToString("yyyy-MM-dd") + " " + DateTime.Now.DayOfWeek.ToString();
+
+    var BODY_CLASS = "login";
+    var USER_ID = -1;
+    if (Session["USER_ID"] != null)
+    {
+        USER_ID = Convert.ToInt32(Session["USER_ID"]);
+        if (USER_ID > -1) { BODY_CLASS = ""; }
+    }
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="applicable-device" content="mobile" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="@Url.Content("~/plugins/jquery-ui/jquery.ui.1.10.2.ie.css")" />
+    <![endif]-->
+    <link href="@Url.Content("~/assets/css/main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/plugins.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/icons.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/login.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/css/fontawesome/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <!--[if IE 7]>
+      <link href="@Url.Content("~/assets/css/fontawesome/font-awesome-ie7.min.css")" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 8]>
+      <link href="@Url.Content("~/assets/css/ie8.css")" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href="@Url.Content("~/assets/css/pagination.css")" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="@Url.Content("~/assets/js/libs/jquery-1.10.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/bootstrap/js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/libs/lodash.compat.min.js")"></script>
+    <!--[if lt IE 9]>
+      <script src="@Url.Content("~/assets/js/libs/html5shiv.js")"></script>
+    <![endif]-->
+    <script type="text/javascript" src="@Url.Content("~/plugins/touchpunch/jquery.ui.touch-punch.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/event.swipe/jquery.event.move.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/event.swipe/jquery.event.swipe.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/libs/breakpoints.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/respond/respond.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/cookie/jquery.cookie.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/slimscroll/jquery.slimscroll.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/slimscroll/jquery.slimscroll.horizontal.min.js")"></script>
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="@Url.Content("~/plugins/flot/excanvas.min.js")"></script>
+    <![endif]-->
+    <script type="text/javascript" src="@Url.Content("~/plugins/sparkline/jquery.sparkline.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.tooltip.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.resize.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.time.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.pie.min.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.growraf.min.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.tickrotor.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/flot/jquery.flot.axislabels.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/easy-pie-chart/jquery.easy-pie-chart.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/daterangepicker/moment.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/daterangepicker/daterangepicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/blockui/jquery.blockUI.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/uniform/jquery.uniform.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/pickadate/picker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/pickadate/picker.date.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/pickadate/picker.time.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/select2/select2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/fileinput/fileinput.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/validation/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/noty/jquery.noty.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/noty/layouts/top.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/noty/themes/default.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/app.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/plugins.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/plugins.form-components.js")"></script>
+
+    <!-- Tooltip classes -->
+    <link rel="stylesheet" href="~/assets/js/tip/tip-yellow/tip-yellow.css" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/assets/js/tip/jquery.poshytip.js")"></script>
+
+    <script>
+        var nPageIndex = 0;//页索引从0开始
+        var nPageSize = 10;//分页数据，每页默认10条
+
+        $(function () {//初始化框架
+            App.init();//我去掉了侧滑效果
+            Plugins.init();
+            FormComponents.init();
+
+            $(window).scroll(function () {//滑动到底部显示返回顶部按钮
+                if ($(window).scrollTop() > 100) {
+                    $("#back-to-top").fadeIn(1500);
+                }
+                else {
+                    $("#back-to-top").fadeOut(1500);
+                }
+            });
+
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 1000);
+                return false;
+            });
+
+        });
+
+        function cap_string(obj) {
+            if (!obj && typeof (obj) != "undefined" && obj != 0) { obj = ""; }
+            return obj;
+        }
+
+        function cap_double(obj, n) {
+            if (!obj && typeof (obj) != "undefined" && obj != 0) {
+                obj = "0.00";
+            }
+            else {
+                var obj = obj.toPrecision(n);
+            }
+            return obj;
+        }
+
+        function cap_int(obj, n) {
+            if (!obj && typeof (obj) != "undefined" && obj != 0) {
+                obj = "0";
+            }
+            else {
+                var obj = obj.toPrecision(n);
+            }
+            return obj;
+        }
+
+        function cap_alert(error_desc) {
+            alert(unescape(error_desc));
+            $(".alert").html(unescape(error_desc)).show();
+        }
+
+        function cap_alert_byid(error_desc, boj) {
+            alert(unescape(error_desc));
+            $(boj).html(unescape(error_desc)).show();
+        }
+
+        function cap_pagination(PageCount) {//公用分页
+            $("#Pagination").pagination(PageCount, {
+                callback: pageselectCallback,
+                first_text: '首 页',
+                prev_text: '上一页',
+                next_text: '下一页',
+                last_text: '末 页',
+                items_per_page: nPageSize,
+                num_display_entries: 3,
+                current_page: nPageIndex,
+                num_edge_entries: 2
+            });
+        }
+
+        function pageselectCallback(page_id, jq) {
+            nPageIndex = page_id;
+            InitData(nPageIndex);//在每一个具体页面里面定义的
+        }
+
+        function cap_number(num, pattern) {
+            var strarr = num ? num.toString().split('.') : ['0'];
+            var fmtarr = pattern ? pattern.split('.') : [''];
+            var retstr = '';
+
+            // 整数部分
+            var str = strarr[0];
+            var fmt = fmtarr[0];
+            var i = str.length - 1;
+            var comma = false;
+            for (var f = fmt.length - 1; f >= 0; f--) {
+                switch (fmt.substr(f, 1)) {
+                    case '#':
+                        if (i >= 0) retstr = str.substr(i--, 1) + retstr;
+                        break;
+                    case '0':
+                        if (i >= 0) retstr = str.substr(i--, 1) + retstr;
+                        else retstr = '0' + retstr;
+                        break;
+                    case ',':
+                        comma = true;
+                        retstr = ',' + retstr;
+                        break;
+                }
+            }
+            if (i >= 0) {
+                if (comma) {
+                    var l = str.length;
+                    for (; i >= 0; i--) {
+                        retstr = str.substr(i, 1) + retstr;
+                        if (i > 0 && ((l - i) % 3) == 0) retstr = ',' + retstr;
+                    }
+                }
+                else retstr = str.substr(0, i + 1) + retstr;
+            }
+
+            retstr = retstr + '.';
+            // 处理小数部分
+            str = strarr.length > 1 ? strarr[1] : '';
+            fmt = fmtarr.length > 1 ? fmtarr[1] : '';
+            i = 0;
+            for (var f = 0; f < fmt.length; f++) {
+                switch (fmt.substr(f, 1)) {
+                    case '#':
+                        if (i < str.length) retstr += str.substr(i++, 1);
+                        break;
+                    case '0':
+                        if (i < str.length) retstr += str.substr(i++, 1);
+                        else retstr += '0';
+                        break;
+                }
+            }
+            return retstr.replace(/^,+/, '').replace(/\.$/, '');
+        }
+
+        function cap_checkbox() {
+            $(".table-checkable02 thead th.checkbox-column :checkbox").on("change", function () {
+                var z = $(this).prop("checked");
+                //alert($(this).parents("table").next());
+                var y = $(this).parents("table").next().children("tbody");
+                y.each(function (B, A) {
+                    $(A).find(".checkbox-column").each(function (D, C) {
+                        var E = $(":checkbox", $(C)).prop("checked", z).trigger("change");
+                        $(C).closest("tr").toggleClass("checked", z)
+                    });
+                });
+            });
+        }
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("~/plugins/bootstrap-inputmask/jquery.inputmask.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/plugins/bootstrap-switch/bootstrap-switch.min.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/assets/js/mes.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/demo/ui_general.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/custom.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/demo/ui_buttons.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/libs/jquery.pagination.js")"></script>
+</head>
+<body>
+
+    @if (USER_ID > -1 && !(ViewContext.RouteData.Values["controller"].ToString().ToLower() + "_" + ViewContext.RouteData.Values["action"].ToString().ToLower()).Equals("home_index"))
+    {
+        @Html.Partial("Header")
+        <div id="container">
+            @Html.Partial("Menu")
+            <div id="content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {   @Html.Partial("HeaderFront")
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- Modal登陆 -->
+    <div class="modal fade" id="modalLogin" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">登 陆</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="login_form" class=" form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-2 control-label">账号<span class="required">*</span></label>
+                            <div class="col-sm-6 col-md-8">
+                                <input type="text" id="txtUserNO" name="txtUserNO" class="form-control required" placeholder="请输入账号" data-msg-required="请输入账号" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 col-md-2 control-label">密码<span class="required">*</span></label>
+                            <div class="col-sm-6 col-md-8">
+                                <input type="password" id="txtPassWD" name="txtPassWD" class="form-control required" placeholder="请输入密码" data-msg-required="请输入密码" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="alert fade in alert-danger" style="display: none;"></span>
+                    <button type="button" id="login_close" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" id="login_confirm" class="btn btn-primary">登陆</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal发表 -->
+    <div class="modal fade" id="modalPost" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+    <p id="back-to-top"><a href="#top"><span></span></a></p>
+    <script>
+        function cap_logout() {
+            $.ajax({
+                url: "@Url.Action("Logout", "Home")",
+                type: "POST",
+                async: false,
+                dataType: "json",
+                data: {},
+                success: function (data, textStatus, xhr) {
+                    if (data.msg == "OK") {
+                        window.location = @Url.Action("Index", "Home");
+                    }
+                    else {
+                        cap_alert(data.error_desc);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

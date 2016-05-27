@@ -1,0 +1,32 @@
+﻿@model MES.Models.UserModel
+   
+<div class="crumbs">
+    <ul id="breadcrumbs" class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>
+            @Model.CURR_PACKAGE
+        </li>
+        <li>
+            @Model.CURR_PROGRAM
+        </li>
+    </ul>
+    <ul class="crumb-buttons">
+        <li>
+            <a>
+                <i class="icon-calendar"></i>
+                <span id="dtTimer"></span>
+            </a>
+        </li>        
+    </ul>
+</div>
+
+<script>
+    document.title = '跳蚤市场' + ' | @Model.CURR_PACKAGE | @Model.CURR_PROGRAM';
+    $("#HeaderTool").show();
+    $("#container").toggleClass("sidebar-open");
+    //$('#dtTimer').html(new Date().Format("yyyy-MM-dd hh:mm:ss"));
+    var displayTime = window.setInterval(function () {
+        $('#dtTimer').html(new Date().Format("yyyy-MM-dd hh:mm:ss"));
+    }, 1000);
+
+</script>

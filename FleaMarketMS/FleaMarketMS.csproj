@@ -1,0 +1,1484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0548C224-92AD-4370-8C23-586F9FB86DE3}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FleaMarketMS</RootNamespace>
+    <AssemblyName>FleaMarketMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MESIII, Version=4.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>BinneryLib\MESIII.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PublicController.cs" />
+    <Compile Include="Services\BaseController.cs" />
+    <Compile Include="Services\CommonService.cs" />
+    <Compile Include="Services\ValidateCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\GUI001T.xml" />
+    <Content Include="assets\css\css.css" />
+    <Content Include="assets\css\error.css" />
+    <Content Include="assets\css\fontawesome\font-awesome-ie7.min.css" />
+    <Content Include="assets\css\fontawesome\font-awesome.min.css" />
+    <Content Include="assets\css\font\fontawesome-webfont.svg" />
+    <Content Include="assets\css\icons.css" />
+    <Content Include="assets\css\ie8.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\pagination.css" />
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\plugins\bootstrap-colorpicker.css" />
+    <Content Include="assets\css\plugins\bootstrap-multiselect.css" />
+    <Content Include="assets\css\plugins\bootstrap-switch.css" />
+    <Content Include="assets\css\plugins\bootstrap-timepicker.css" />
+    <Content Include="assets\css\plugins\bootstrap-wizard.css" />
+    <Content Include="assets\css\plugins\bootstrap-wysihtml5.css" />
+    <Content Include="assets\css\plugins\datatables.css" />
+    <Content Include="assets\css\plugins\datatables_bootstrap.css" />
+    <Content Include="assets\css\plugins\daterangepicker.css" />
+    <Content Include="assets\css\plugins\duallistbox.css" />
+    <Content Include="assets\css\plugins\fullcalendar.css" />
+    <Content Include="assets\css\plugins\jquery-ui.css" />
+    <Content Include="assets\css\plugins\nestable.css" />
+    <Content Include="assets\css\plugins\nprogress.css" />
+    <Content Include="assets\css\plugins\pickadate.css" />
+    <Content Include="assets\css\plugins\select2.css" />
+    <Content Include="assets\css\plugins\tagsinput.css" />
+    <Content Include="assets\css\plugins\typeahead.css" />
+    <Content Include="assets\css\plugins\uniform.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0001.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0002.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0003.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0004.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0005.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE0006.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE10.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1001.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1002.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1003.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1004.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE1005.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE11.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE12.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE13.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE14.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE15.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE16.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE17.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE18.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE19.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE20.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2001.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2002.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2003.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2004.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2005.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2006.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE2007.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE21.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE22.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE23.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE24.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE25.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE26.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE27.BMP" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE28.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE29.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE30.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3001.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3002.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3003.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3004.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3005.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3006.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3007.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3008.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3009.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3010.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3011.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE3012.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE31.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE32.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE33.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE34.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE35.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE36.JPG" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE37.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE38.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE39.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE4.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE5.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE6.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE7.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE8.bmp" />
+    <Content Include="assets\img\CAD_IMAGES\SMT_IMAGE9.bmp" />
+    <Content Include="assets\img\excel.jpg" />
+    <Content Include="assets\img\Go-Top.png" />
+    <Content Include="assets\img\icons\iconsweets\icos-dark.png" />
+    <Content Include="assets\img\icons\iconsweets\icos-white.png" />
+    <Content Include="assets\img\icons\led\sprite.png" />
+    <Content Include="assets\img\logo.gif" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\next.gif" />
+    <Content Include="assets\img\sidebar\sidebar-divider-dots.png" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\assets\img\ajax-loading.gif" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\demo\charts.js" />
+    <Content Include="assets\js\demo\charts\chart_bars_horizontal.js" />
+    <Content Include="assets\js\demo\charts\chart_bars_vertical.js" />
+    <Content Include="assets\js\demo\charts\chart_donut.js" />
+    <Content Include="assets\js\demo\charts\chart_filled_blue.js" />
+    <Content Include="assets\js\demo\charts\chart_filled_green.js" />
+    <Content Include="assets\js\demo\charts\chart_filled_red.js" />
+    <Content Include="assets\js\demo\charts\chart_multiple.js" />
+    <Content Include="assets\js\demo\charts\chart_pie.js" />
+    <Content Include="assets\js\demo\charts\chart_selection_zooming.js" />
+    <Content Include="assets\js\demo\charts\chart_simple.js" />
+    <Content Include="assets\js\demo\charts\chart_updating.js" />
+    <Content Include="assets\js\demo\charts\chart_widget.js" />
+    <Content Include="assets\js\demo\form_components.js" />
+    <Content Include="assets\js\demo\form_validation.js" />
+    <Content Include="assets\js\demo\form_wizard.js" />
+    <Content Include="assets\js\demo\google_maps.js" />
+    <Content Include="assets\js\demo\pages_calendar.js" />
+    <Content Include="assets\js\demo\ui_buttons.js" />
+    <Content Include="assets\js\demo\ui_general.js" />
+    <Content Include="assets\js\demo\ui_nestable_list.js" />
+    <Content Include="assets\js\demo\ui_sliders.js" />
+    <Content Include="assets\js\echarts-map.js" />
+    <Content Include="assets\js\echarts-original-map.js" />
+    <Content Include="assets\js\echarts-original.js" />
+    <Content Include="assets\js\echarts.js" />
+    <Content Include="assets\js\echarts\build\build.js" />
+    <Content Include="assets\js\echarts\build\config-tpl.js" />
+    <Content Include="assets\js\echarts\build\echarts-map.js" />
+    <Content Include="assets\js\echarts\build\echarts-original-map.js" />
+    <Content Include="assets\js\echarts\build\echarts-original.js" />
+    <Content Include="assets\js\echarts\build\echarts-plain-map.js" />
+    <Content Include="assets\js\echarts\build\echarts-plain-original-map.js" />
+    <Content Include="assets\js\echarts\build\echarts-plain-original.js" />
+    <Content Include="assets\js\echarts\build\echarts-plain.js" />
+    <Content Include="assets\js\echarts\build\echarts.js" />
+    <Content Include="assets\js\echarts\build\r.js" />
+    <Content Include="assets\js\echarts\build\wrap\almond.js" />
+    <Content Include="assets\js\echarts\build\wrap\end-map.js" />
+    <Content Include="assets\js\echarts\build\wrap\end.js" />
+    <Content Include="assets\js\echarts\build\wrap\start.js" />
+    <Content Include="assets\js\echarts\doc\about.html" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap-responsive.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap-theme.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap-theme.min.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap.min.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\carousel.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\codemirror.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\echartsHome.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\flexslider.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\google-code-prettify.css" />
+    <Content Include="assets\js\echarts\doc\asset\css\monokai.css" />
+    <Content Include="assets\js\echarts\doc\asset\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\echarts\doc\asset\ico\favicon.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\K线图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\仪表盘.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\力导向图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\和弦图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\地图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\折线图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\散点图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\柱状图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\漏斗图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\雷达图.png" />
+    <Content Include="assets\js\echarts\doc\asset\ico\饼状图.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\chenwei.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\denghongqi.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\echarts1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\erik.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\huangyue.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\huangzhimin.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\linfeng.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\lizhan.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\loutongbing.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\shenhao.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\shenyi.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\sushuang.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\tanhe.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\wangjunting.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\weitaiyun.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\yangji.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\yaofeifei.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\zhangyanru.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\zhouyang.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\zrender1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\zuming.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\architecture.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\bg_direction_nav.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\blacktocat.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\connect.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\creativity.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\custom.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\dataDancing.mp3" />
+    <Content Include="assets\js\echarts\doc\asset\img\dataRange.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\dataView.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\datazoom.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\device.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisBoundaryGap.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisBoundaryGap1.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisDetail.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisDetail.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisScale1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\axisScale2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\barTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\charts.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\chordTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\dataRange.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\dataZoom.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\forceTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\grid.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\kTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\legend.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\lineTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\mapTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\multiControl.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\pieTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\radarTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\scatterTheme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\timeline.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\title.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\toolbox.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\tooltip1.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\tooltip2.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\draggable.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\dynamic1.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\dynamic2.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\echarts-logo.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\echarts-logo2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\effect.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\axis.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar10.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar11.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar12.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar6.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar7.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar8.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\bar9.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\cache.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\chord.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\chord1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\chord2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dataRange.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dataRange1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dataZoom.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dataZoom1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dynamicLineBar.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dynamicPieRadar.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\dynamicScatterK.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\EChartsTheme.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\event.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\force.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\force1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\force2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\force4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\funnel.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\funnel1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\funnel2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\funnel3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\gauge5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\import.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\k.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\k1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\lasagna.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\line6.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\loading.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map10.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map11.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map12.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map13.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map14.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map15.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map16.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map17.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map18.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map6.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map7.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map8.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\map9.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix10.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix11.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix6.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix7.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix8.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\mix9.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie6.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\pie7.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\radar.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\radar1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\radar2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\radar3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter4.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\scatter5.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\theme.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\tooltip.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\webkit-dep.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\wormhole.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\explorer.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\feature1.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\feature2.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\feature3.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\fork.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\glyphicons-halflings.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\groovepaper.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\icon-bar.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\legendSelected.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\magicType.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\mark.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\mix.jpg" />
+    <Content Include="assets\js\echarts\doc\asset\img\multiStack.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\scatter.gif" />
+    <Content Include="assets\js\echarts\doc\asset\img\slide-01.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\slide-02.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\slide-03.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\slide-04.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\subMapType.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\ticks.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\tweed.png" />
+    <Content Include="assets\js\echarts\doc\asset\img\zrender.png" />
+    <Content Include="assets\js\echarts\doc\asset\js\application.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-affix.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-alert.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-button.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-carousel.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-collapse.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-dropdown.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-modal.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-popover.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-scrollspy.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-tab.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-tooltip.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-transition.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap-typeahead.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\bootstrap.min.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\codemirror.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\dataDancing.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsConfig.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsDoc.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsExample.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsHome.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsTheme.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\echartsThemeDesigner.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\esl\css.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\esl\esl.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\esl\js.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\google-code-prettify.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\html5shiv.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\javascript.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\jquery.flexslider.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\jquery.js" />
+    <Content Include="assets\js\echarts\doc\asset\js\jquery.min.js" />
+    <Content Include="assets\js\echarts\doc\changelog.html" />
+    <Content Include="assets\js\echarts\doc\doc.html" />
+    <Content Include="assets\js\echarts\doc\example.html" />
+    <Content Include="assets\js\echarts\doc\example\axis.html" />
+    <Content Include="assets\js\echarts\doc\example\bar.html" />
+    <Content Include="assets\js\echarts\doc\example\bar1.html" />
+    <Content Include="assets\js\echarts\doc\example\bar10.html" />
+    <Content Include="assets\js\echarts\doc\example\bar11.html" />
+    <Content Include="assets\js\echarts\doc\example\bar12.html" />
+    <Content Include="assets\js\echarts\doc\example\bar2.html" />
+    <Content Include="assets\js\echarts\doc\example\bar3.html" />
+    <Content Include="assets\js\echarts\doc\example\bar4.html" />
+    <Content Include="assets\js\echarts\doc\example\bar5.html" />
+    <Content Include="assets\js\echarts\doc\example\bar6.html" />
+    <Content Include="assets\js\echarts\doc\example\bar7.html" />
+    <Content Include="assets\js\echarts\doc\example\bar8.html" />
+    <Content Include="assets\js\echarts\doc\example\bar9.html" />
+    <Content Include="assets\js\echarts\doc\example\chord.html" />
+    <Content Include="assets\js\echarts\doc\example\chord1.html" />
+    <Content Include="assets\js\echarts\doc\example\chord2.html" />
+    <Content Include="assets\js\echarts\doc\example\dataRange.html" />
+    <Content Include="assets\js\echarts\doc\example\dataRange1.html" />
+    <Content Include="assets\js\echarts\doc\example\dataZoom.html" />
+    <Content Include="assets\js\echarts\doc\example\dataZoom1.html" />
+    <Content Include="assets\js\echarts\doc\example\dataZoom2.html" />
+    <Content Include="assets\js\echarts\doc\example\demo.html" />
+    <Content Include="assets\js\echarts\doc\example\dynamicLineBar.html" />
+    <Content Include="assets\js\echarts\doc\example\dynamicPieRadar.html" />
+    <Content Include="assets\js\echarts\doc\example\dynamicScatterK.html" />
+    <Content Include="assets\js\echarts\doc\example\event.html" />
+    <Content Include="assets\js\echarts\doc\example\force.html" />
+    <Content Include="assets\js\echarts\doc\example\force1.html" />
+    <Content Include="assets\js\echarts\doc\example\force2.html" />
+    <Content Include="assets\js\echarts\doc\example\force3.html" />
+    <Content Include="assets\js\echarts\doc\example\force4.html" />
+    <Content Include="assets\js\echarts\doc\example\funnel.html" />
+    <Content Include="assets\js\echarts\doc\example\funnel1.html" />
+    <Content Include="assets\js\echarts\doc\example\funnel2.html" />
+    <Content Include="assets\js\echarts\doc\example\funnel3.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge1.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge2.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge3.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge4.html" />
+    <Content Include="assets\js\echarts\doc\example\gauge5.html" />
+    <Content Include="assets\js\echarts\doc\example\k.html" />
+    <Content Include="assets\js\echarts\doc\example\k1.html" />
+    <Content Include="assets\js\echarts\doc\example\lasagna.html" />
+    <Content Include="assets\js\echarts\doc\example\legend.html" />
+    <Content Include="assets\js\echarts\doc\example\line.html" />
+    <Content Include="assets\js\echarts\doc\example\line1.html" />
+    <Content Include="assets\js\echarts\doc\example\line2.html" />
+    <Content Include="assets\js\echarts\doc\example\line3.html" />
+    <Content Include="assets\js\echarts\doc\example\line4.html" />
+    <Content Include="assets\js\echarts\doc\example\line5.html" />
+    <Content Include="assets\js\echarts\doc\example\line6.html" />
+    <Content Include="assets\js\echarts\doc\example\loading.html" />
+    <Content Include="assets\js\echarts\doc\example\map.html" />
+    <Content Include="assets\js\echarts\doc\example\map1.html" />
+    <Content Include="assets\js\echarts\doc\example\map10.html" />
+    <Content Include="assets\js\echarts\doc\example\map11.html" />
+    <Content Include="assets\js\echarts\doc\example\map12.html" />
+    <Content Include="assets\js\echarts\doc\example\map13.html" />
+    <Content Include="assets\js\echarts\doc\example\map14.html" />
+    <Content Include="assets\js\echarts\doc\example\map15.html" />
+    <Content Include="assets\js\echarts\doc\example\map16.html" />
+    <Content Include="assets\js\echarts\doc\example\map17.html" />
+    <Content Include="assets\js\echarts\doc\example\map18.html" />
+    <Content Include="assets\js\echarts\doc\example\map2.html" />
+    <Content Include="assets\js\echarts\doc\example\map3.html" />
+    <Content Include="assets\js\echarts\doc\example\map4.html" />
+    <Content Include="assets\js\echarts\doc\example\map5.html" />
+    <Content Include="assets\js\echarts\doc\example\map6.html" />
+    <Content Include="assets\js\echarts\doc\example\map7.html" />
+    <Content Include="assets\js\echarts\doc\example\map8.html" />
+    <Content Include="assets\js\echarts\doc\example\map9.html" />
+    <Content Include="assets\js\echarts\doc\example\middle-east-pre.js" />
+    <Content Include="assets\js\echarts\doc\example\middle-east.js" />
+    <Content Include="assets\js\echarts\doc\example\mix1.html" />
+    <Content Include="assets\js\echarts\doc\example\mix10.html" />
+    <Content Include="assets\js\echarts\doc\example\mix11.html" />
+    <Content Include="assets\js\echarts\doc\example\mix2.html" />
+    <Content Include="assets\js\echarts\doc\example\mix3.html" />
+    <Content Include="assets\js\echarts\doc\example\mix4.html" />
+    <Content Include="assets\js\echarts\doc\example\mix5.html" />
+    <Content Include="assets\js\echarts\doc\example\mix6.html" />
+    <Content Include="assets\js\echarts\doc\example\mix7.html" />
+    <Content Include="assets\js\echarts\doc\example\mix8.html" />
+    <Content Include="assets\js\echarts\doc\example\mix9.html" />
+    <Content Include="assets\js\echarts\doc\example\pie.html" />
+    <Content Include="assets\js\echarts\doc\example\pie1.html" />
+    <Content Include="assets\js\echarts\doc\example\pie2.html" />
+    <Content Include="assets\js\echarts\doc\example\pie3.html" />
+    <Content Include="assets\js\echarts\doc\example\pie4.html" />
+    <Content Include="assets\js\echarts\doc\example\pie5.html" />
+    <Content Include="assets\js\echarts\doc\example\pie6.html" />
+    <Content Include="assets\js\echarts\doc\example\pie7.html" />
+    <Content Include="assets\js\echarts\doc\example\radar.html" />
+    <Content Include="assets\js\echarts\doc\example\radar1.html" />
+    <Content Include="assets\js\echarts\doc\example\radar2.html" />
+    <Content Include="assets\js\echarts\doc\example\radar3.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter1.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter2.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter3.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter4.html" />
+    <Content Include="assets\js\echarts\doc\example\scatter5.html" />
+    <Content Include="assets\js\echarts\doc\example\svg\baidu-building.svg" />
+    <Content Include="assets\js\echarts\doc\example\svg\body-female.svg" />
+    <Content Include="assets\js\echarts\doc\example\svg\body-male.svg" />
+    <Content Include="assets\js\echarts\doc\example\svg\football.svg" />
+    <Content Include="assets\js\echarts\doc\example\theme.html" />
+    <Content Include="assets\js\echarts\doc\example\themeDesigner.html" />
+    <Content Include="assets\js\echarts\doc\example\theme\blue.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\dark.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\default.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\gray.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\green.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\infographic.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\macarons.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\red.js" />
+    <Content Include="assets\js\echarts\doc\example\theme\shine.js" />
+    <Content Include="assets\js\echarts\doc\example\timelineOption.js" />
+    <Content Include="assets\js\echarts\doc\example\toolbox.html" />
+    <Content Include="assets\js\echarts\doc\example\tooltip.html" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\index.html" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\data-a-china.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\data-china.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\data-formatter.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\djws.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\option0.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\option1.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\option2.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\option3.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\24-population-china\index.html" />
+    <Content Include="assets\js\echarts\doc\example\topic\24-population-china\js\data-people.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\index.html" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\china_city_geo.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\data.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\main.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\option0.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\option1.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\option2.js" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\option3.js" />
+    <Content Include="assets\js\echarts\doc\example\webkit-dep-pre.js" />
+    <Content Include="assets\js\echarts\doc\example\webkit-dep.html" />
+    <Content Include="assets\js\echarts\doc\example\webkit-dep.js" />
+    <Content Include="assets\js\echarts\doc\example\wormhole.html" />
+    <Content Include="assets\js\echarts\doc\example\www2\index.html" />
+    <Content Include="assets\js\echarts\doc\example\www2\js\echarts-plain-map.js" />
+    <Content Include="assets\js\echarts\doc\example\www2\js\echarts-plain.js" />
+    <Content Include="assets\js\echarts\doc\example\www\index.html" />
+    <Content Include="assets\js\echarts\doc\example\www\js\echarts-map.js" />
+    <Content Include="assets\js\echarts\doc\example\www\js\echarts.js" />
+    <Content Include="assets\js\echarts\doc\example\www\js\esl.js" />
+    <Content Include="assets\js\echarts\doc\feature.html" />
+    <Content Include="assets\js\echarts\doc\slide\css\echarts-slide.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\print\paper.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\print\pdf.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\reveal.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\reveal.min.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\beige.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\default.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\moon.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\night.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\serif.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\simple.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\sky.css" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\solarized.css" />
+    <Content Include="assets\js\echarts\doc\slide\img\bigData.jpg" />
+    <Content Include="assets\js\echarts\doc\slide\img\big_load.gif" />
+    <Content Include="assets\js\echarts\doc\slide\img\echarts_logo.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\fork.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconBarChart.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconDataView.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconDataZoom.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconDataZoomReset.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconLineChart.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\iconStack.png" />
+    <Content Include="assets\js\echarts\doc\slide\img\tableau.jpg" />
+    <Content Include="assets\js\echarts\doc\slide\js\reveal.js" />
+    <Content Include="assets\js\echarts\doc\slide\js\reveal.min.js" />
+    <Content Include="assets\js\echarts\doc\slide\js\timelineOption.js" />
+    <Content Include="assets\js\echarts\doc\slide\js\whyEcharts.js" />
+    <Content Include="assets\js\echarts\doc\slide\lib\css\zenburn.css" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\league_gothic-webfont.svg" />
+    <Content Include="assets\js\echarts\doc\slide\lib\js\classList.js" />
+    <Content Include="assets\js\echarts\doc\slide\lib\js\head.min.js" />
+    <Content Include="assets\js\echarts\doc\slide\lib\js\html5shiv.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\highlight\highlight.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\markdown\example.html" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\markdown\markdown.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\markdown\marked.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\multiplex\client.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\multiplex\index.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\multiplex\master.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes-server\client.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes-server\index.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes-server\notes.html" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes\notes.html" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes\notes.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\postmessage\example.html" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\postmessage\postmessage.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\print-pdf\print-pdf.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\remotes\remotes.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\search\search.js" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\zoom-js\zoom.js" />
+    <Content Include="assets\js\echarts\doc\slide\whyEcharts.html" />
+    <Content Include="assets\js\echarts\doc\start.html" />
+    <Content Include="assets\js\echarts\echarts-map.js" />
+    <Content Include="assets\js\echarts\echarts-original-map.js" />
+    <Content Include="assets\js\echarts\echarts-original.js" />
+    <Content Include="assets\js\echarts\echarts.js" />
+    <Content Include="assets\js\echarts\esl.js" />
+    <Content Include="assets\js\echarts\index.html" />
+    <Content Include="assets\js\echarts\LICENSE.txt" />
+    <Content Include="assets\js\echarts\src\chart.js" />
+    <Content Include="assets\js\echarts\src\chart\bar.js" />
+    <Content Include="assets\js\echarts\src\chart\base.js" />
+    <Content Include="assets\js\echarts\src\chart\chord.js" />
+    <Content Include="assets\js\echarts\src\chart\force.js" />
+    <Content Include="assets\js\echarts\src\chart\forceLayoutWorker.js" />
+    <Content Include="assets\js\echarts\src\chart\funnel.js" />
+    <Content Include="assets\js\echarts\src\chart\gauge.js" />
+    <Content Include="assets\js\echarts\src\chart\island.js" />
+    <Content Include="assets\js\echarts\src\chart\k.js" />
+    <Content Include="assets\js\echarts\src\chart\line.js" />
+    <Content Include="assets\js\echarts\src\chart\map.js" />
+    <Content Include="assets\js\echarts\src\chart\pie.js" />
+    <Content Include="assets\js\echarts\src\chart\radar.js" />
+    <Content Include="assets\js\echarts\src\chart\scatter.js" />
+    <Content Include="assets\js\echarts\src\component.js" />
+    <Content Include="assets\js\echarts\src\component\axis.js" />
+    <Content Include="assets\js\echarts\src\component\base.js" />
+    <Content Include="assets\js\echarts\src\component\categoryAxis.js" />
+    <Content Include="assets\js\echarts\src\component\dataRange.js" />
+    <Content Include="assets\js\echarts\src\component\dataView.js" />
+    <Content Include="assets\js\echarts\src\component\dataZoom.js" />
+    <Content Include="assets\js\echarts\src\component\grid.js" />
+    <Content Include="assets\js\echarts\src\component\legend.js" />
+    <Content Include="assets\js\echarts\src\component\polar.js" />
+    <Content Include="assets\js\echarts\src\component\timeline.js" />
+    <Content Include="assets\js\echarts\src\component\title.js" />
+    <Content Include="assets\js\echarts\src\component\toolbox.js" />
+    <Content Include="assets\js\echarts\src\component\tooltip.js" />
+    <Content Include="assets\js\echarts\src\component\valueAxis.js" />
+    <Content Include="assets\js\echarts\src\config.js" />
+    <Content Include="assets\js\echarts\src\echarts.js" />
+    <Content Include="assets\js\echarts\src\theme\default.js" />
+    <Content Include="assets\js\echarts\src\util\accMath.js" />
+    <Content Include="assets\js\echarts\src\util\coordinates.js" />
+    <Content Include="assets\js\echarts\src\util\ecAnimation.js" />
+    <Content Include="assets\js\echarts\src\util\ecData.js" />
+    <Content Include="assets\js\echarts\src\util\ecEffect.js" />
+    <Content Include="assets\js\echarts\src\util\ecQuery.js" />
+    <Content Include="assets\js\echarts\src\util\kwargs.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoCoord.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\an_hui_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\ao_men_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\bei_jing_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\china_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\chong_qing_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\fu_jian_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\gan_su_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\guang_dong_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\guang_xi_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\gui_zhou_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\hai_nan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\hei_long_jiang_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\he_bei_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\he_nan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\hu_bei_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\hu_nan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\jiang_su_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\jiang_xi_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\ji_lin_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\liao_ning_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\nei_meng_gu_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\ning_xia_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\qing_hai_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\shang_hai_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\shan_dong_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\shan_xi_1_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\shan_xi_2_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\si_chuan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\tai_wan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\tian_jin_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\world_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\xiang_gang_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\xin_jiang_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\xi_zang_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\yun_nan_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\zhe_jiang_geo.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\params.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\encode.js" />
+    <Content Include="assets\js\echarts\src\util\mapData\textFixed.js" />
+    <Content Include="assets\js\echarts\src\util\ndarray.js" />
+    <Content Include="assets\js\echarts\src\util\number.js" />
+    <Content Include="assets\js\echarts\src\util\projection\albers.js" />
+    <Content Include="assets\js\echarts\src\util\projection\mercator.js" />
+    <Content Include="assets\js\echarts\src\util\projection\normal.js" />
+    <Content Include="assets\js\echarts\src\util\projection\svg.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Candle.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Chain.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Chord.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Cross.js" />
+    <Content Include="assets\js\echarts\src\util\shape\GaugePointer.js" />
+    <Content Include="assets\js\echarts\src\util\shape\HalfSmoothPolygon.js" />
+    <Content Include="assets\js\echarts\src\util\shape\HandlePolygon.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Icon.js" />
+    <Content Include="assets\js\echarts\src\util\shape\MarkLine.js" />
+    <Content Include="assets\js\echarts\src\util\shape\normalIsCover.js" />
+    <Content Include="assets\js\echarts\src\util\shape\Symbol.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\animation\animation.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\animation\clip.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\animation\easing.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\config.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\lib\excanvas.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\base.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\beziercurve.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\brokenLine.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\circle.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\droplet.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\ellipse.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\heart.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\image.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\isogon.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\line.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\path.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\polygon.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\rectangle.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\ring.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\rose.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\sector.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\star.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\text.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\trochoid.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\area.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\color.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\env.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\event.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\loadingEffect.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\math.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\matrix.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\util.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\vector.js" />
+    <Content Include="assets\js\echarts\src\zrender\src\zrender.js" />
+    <Content Include="assets\js\echarts\test\allchart\all.html" />
+    <Content Include="assets\js\echarts\test\allchart\all.js" />
+    <Content Include="assets\js\echarts\test\performance\option.js" />
+    <Content Include="assets\js\echarts\test\performance\p.html" />
+    <Content Include="assets\js\echarts\test\performance\p.js" />
+    <Content Include="assets\js\esl.js" />
+    <Content Include="assets\js\libs\breakpoints.js" />
+    <Content Include="assets\js\libs\html5shiv.js" />
+    <Content Include="assets\js\libs\jquery-1.10.2.min.js" />
+    <Content Include="assets\js\libs\jquery.pagination.js" />
+    <Content Include="assets\js\libs\lodash.compat.min.js" />
+    <Content Include="assets\js\login.js" />
+    <Content Include="assets\js\mes.js" />
+    <Content Include="assets\js\plugins.form-components.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\plugins\datatables\tabletools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="assets\js\tip\jquery.poshytip.js" />
+    <Content Include="assets\js\tip\jquery.poshytip.min.js" />
+    <Content Include="assets\js\tip\tip-darkgray\tip-darkgray.css" />
+    <Content Include="assets\js\tip\tip-darkgray\tip-darkgray.png" />
+    <Content Include="assets\js\tip\tip-darkgray\tip-darkgray_arrows.png" />
+    <Content Include="assets\js\tip\tip-green\tip-green.css" />
+    <Content Include="assets\js\tip\tip-green\tip-green_arrows.gif" />
+    <Content Include="assets\js\tip\tip-skyblue\tip-skyblue.css" />
+    <Content Include="assets\js\tip\tip-skyblue\tip-skyblue.png" />
+    <Content Include="assets\js\tip\tip-skyblue\tip-skyblue_arrows.png" />
+    <Content Include="assets\js\tip\tip-twitter\tip-twitter.css" />
+    <Content Include="assets\js\tip\tip-twitter\tip-twitter_arrows.gif" />
+    <Content Include="assets\js\tip\tip-violet\tip-violet.css" />
+    <Content Include="assets\js\tip\tip-violet\tip-violet.png" />
+    <Content Include="assets\js\tip\tip-violet\tip-violet_arrows.png" />
+    <Content Include="assets\js\tip\tip-yellowsimple\tip-yellowsimple.css" />
+    <Content Include="assets\js\tip\tip-yellowsimple\tip-yellowsimple_arrows.gif" />
+    <Content Include="assets\js\tip\tip-yellow\tip-yellow.css" />
+    <Content Include="assets\js\tip\tip-yellow\tip-yellow.png" />
+    <Content Include="assets\js\tip\tip-yellow\tip-yellow_arrows.png" />
+    <Content Include="assets\js\zrender\src\animation\animation.js" />
+    <Content Include="assets\js\zrender\src\animation\clip.js" />
+    <Content Include="assets\js\zrender\src\animation\easing.js" />
+    <Content Include="assets\js\zrender\src\config.js" />
+    <Content Include="assets\js\zrender\src\lib\excanvas.js" />
+    <Content Include="assets\js\zrender\src\shape.js" />
+    <Content Include="assets\js\zrender\src\shape\base.js" />
+    <Content Include="assets\js\zrender\src\shape\beziercurve.js" />
+    <Content Include="assets\js\zrender\src\shape\brokenLine.js" />
+    <Content Include="assets\js\zrender\src\shape\circle.js" />
+    <Content Include="assets\js\zrender\src\shape\droplet.js" />
+    <Content Include="assets\js\zrender\src\shape\ellipse.js" />
+    <Content Include="assets\js\zrender\src\shape\heart.js" />
+    <Content Include="assets\js\zrender\src\shape\image.js" />
+    <Content Include="assets\js\zrender\src\shape\isogon.js" />
+    <Content Include="assets\js\zrender\src\shape\line.js" />
+    <Content Include="assets\js\zrender\src\shape\path.js" />
+    <Content Include="assets\js\zrender\src\shape\polygon.js" />
+    <Content Include="assets\js\zrender\src\shape\rectangle.js" />
+    <Content Include="assets\js\zrender\src\shape\ring.js" />
+    <Content Include="assets\js\zrender\src\shape\rose.js" />
+    <Content Include="assets\js\zrender\src\shape\sector.js" />
+    <Content Include="assets\js\zrender\src\shape\star.js" />
+    <Content Include="assets\js\zrender\src\shape\text.js" />
+    <Content Include="assets\js\zrender\src\shape\trochoid.js" />
+    <Content Include="assets\js\zrender\src\tool\area.js" />
+    <Content Include="assets\js\zrender\src\tool\color.js" />
+    <Content Include="assets\js\zrender\src\tool\env.js" />
+    <Content Include="assets\js\zrender\src\tool\event.js" />
+    <Content Include="assets\js\zrender\src\tool\loadingEffect.js" />
+    <Content Include="assets\js\zrender\src\tool\math.js" />
+    <Content Include="assets\js\zrender\src\tool\matrix.js" />
+    <Content Include="assets\js\zrender\src\tool\util.js" />
+    <Content Include="assets\js\zrender\src\tool\vector.js" />
+    <Content Include="assets\js\zrender\src\zrender.js" />
+    <Content Include="assets\src\jquery.poshytip.js" />
+    <Content Include="assets\src\jquery.poshytip.min.js" />
+    <Content Include="assets\src\tip-darkgray\tip-darkgray.css" />
+    <Content Include="assets\src\tip-darkgray\tip-darkgray.png" />
+    <Content Include="assets\src\tip-darkgray\tip-darkgray_arrows.png" />
+    <Content Include="assets\src\tip-green\tip-green.css" />
+    <Content Include="assets\src\tip-green\tip-green_arrows.gif" />
+    <Content Include="assets\src\tip-skyblue\tip-skyblue.css" />
+    <Content Include="assets\src\tip-skyblue\tip-skyblue.png" />
+    <Content Include="assets\src\tip-skyblue\tip-skyblue_arrows.png" />
+    <Content Include="assets\src\tip-twitter\tip-twitter.css" />
+    <Content Include="assets\src\tip-twitter\tip-twitter_arrows.gif" />
+    <Content Include="assets\src\tip-violet\tip-violet.css" />
+    <Content Include="assets\src\tip-violet\tip-violet.png" />
+    <Content Include="assets\src\tip-violet\tip-violet_arrows.png" />
+    <Content Include="assets\src\tip-yellowsimple\tip-yellowsimple.css" />
+    <Content Include="assets\src\tip-yellowsimple\tip-yellowsimple_arrows.gif" />
+    <Content Include="assets\src\tip-yellow\tip-yellow.css" />
+    <Content Include="assets\src\tip-yellow\tip-yellow.png" />
+    <Content Include="assets\src\tip-yellow\tip-yellow_arrows.png" />
+    <Content Include="assets\userIcon\default.png" />
+    <Content Include="Library\BinneryLib\MESIII.dll" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="plugins\autosize\vssver2.scc" />
+    <Content Include="plugins\blockui\vssver2.scc" />
+    <Content Include="plugins\bootbox\%29.html%28i%29%29,c.on%28" />
+    <Content Include="plugins\bootbox\vssver2.scc" />
+    <Content Include="plugins\bootstrap-colorpicker\img\vssver2.scc" />
+    <Content Include="plugins\bootstrap-colorpicker\vssver2.scc" />
+    <Content Include="plugins\bootstrap-inputmask\vssver2.scc" />
+    <Content Include="plugins\bootstrap-multiselect\vssver2.scc" />
+    <Content Include="plugins\bootstrap-switch\vssver2.scc" />
+    <Content Include="plugins\bootstrap-timepicker\vssver2.scc" />
+    <Content Include="plugins\bootstrap-wizard\vssver2.scc" />
+    <Content Include="plugins\bootstrap-wysihtml5\vssver2.scc" />
+    <Content Include="plugins\cookie\vssver2.scc" />
+    <Content Include="plugins\datatables\img\vssver2.scc" />
+    <Content Include="plugins\datatables\responsive\img\vssver2.scc" />
+    <Content Include="plugins\datatables\responsive\vssver2.scc" />
+    <Content Include="plugins\datatables\vssver2.scc" />
+    <Content Include="plugins\daterangepicker\vssver2.scc" />
+    <Content Include="plugins\duallistbox\vssver2.scc" />
+    <Content Include="plugins\easy-pie-chart\vssver2.scc" />
+    <Content Include="plugins\event.swipe\vssver2.scc" />
+    <Content Include="plugins\fileinput\vssver2.scc" />
+    <Content Include="plugins\flot\vssver2.scc" />
+    <Content Include="plugins\fullcalendar\vssver2.scc" />
+    <Content Include="plugins\globalize\cultures\vssver2.scc" />
+    <Content Include="plugins\globalize\vssver2.scc" />
+    <Content Include="plugins\gmaps\vssver2.scc" />
+    <Content Include="plugins\inputlimiter\vssver2.scc" />
+    <Content Include="plugins\jquery-ui\images\vssver2.scc" />
+    <Content Include="plugins\jquery-ui\vssver2.scc" />
+    <Content Include="plugins\knob\vssver2.scc" />
+    <Content Include="plugins\nestable\vssver2.scc" />
+    <Content Include="plugins\noty\layouts\vssver2.scc" />
+    <Content Include="plugins\noty\themes\vssver2.scc" />
+    <Content Include="plugins\noty\vssver2.scc" />
+    <Content Include="plugins\nprogress\vssver2.scc" />
+    <Content Include="plugins\pickadate\vssver2.scc" />
+    <Content Include="plugins\respond\vssver2.scc" />
+    <Content Include="plugins\select2\vssver2.scc" />
+    <Content Include="plugins\slimscroll\vssver2.scc" />
+    <Content Include="plugins\sparkline\vssver2.scc" />
+    <Content Include="plugins\tagsinput\vssver2.scc" />
+    <Content Include="plugins\touchpunch\vssver2.scc" />
+    <Content Include="plugins\typeahead\vssver2.scc" />
+    <Content Include="plugins\uniform\images\vssver2.scc" />
+    <Content Include="plugins\uniform\vssver2.scc" />
+    <Content Include="plugins\validation\vssver2.scc" />
+    <Content Include="assets\css\fontawesome\vssver2.scc" />
+    <Content Include="assets\css\font\fontawesome-webfont.eot" />
+    <Content Include="assets\css\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\css\font\fontawesome-webfont.woff" />
+    <Content Include="assets\css\font\vssver2.scc" />
+    <Content Include="assets\css\plugins\vssver2.scc" />
+    <Content Include="assets\css\vssver2.scc" />
+    <Content Include="assets\img\CAD_IMAGES\vssver2.scc" />
+    <Content Include="assets\img\icons\iconsweets\vssver2.scc" />
+    <Content Include="assets\img\icons\led\vssver2.scc" />
+    <Content Include="assets\img\sidebar\vssver2.scc" />
+    <Content Include="assets\img\vssver2.scc" />
+    <Content Include="assets\js\assets\img\vssver2.scc" />
+    <Content Include="assets\js\demo\charts\vssver2.scc" />
+    <Content Include="assets\js\demo\vssver2.scc" />
+    <Content Include="assets\js\echarts\.editorconfig" />
+    <Content Include="assets\js\echarts\.gitignore" />
+    <Content Include="assets\js\echarts\.jshintignore" />
+    <Content Include="assets\js\echarts\.jshintrc" />
+    <Content Include="assets\js\echarts\.npmignore" />
+    <Content Include="assets\js\echarts\.project" />
+    <Content Include="assets\js\echarts\bower.json" />
+    <Content Include="assets\js\echarts\build\build.bat" />
+    <Content Include="assets\js\echarts\build\build.sh" />
+    <Content Include="assets\js\echarts\build\vssver2.scc" />
+    <Content Include="assets\js\echarts\build\wrap\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap-theme.css.map" />
+    <Content Include="assets\js\echarts\doc\asset\css\bootstrap.css.map" />
+    <Content Include="assets\js\echarts\doc\asset\css\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\js\echarts\doc\asset\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\js\echarts\doc\asset\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\js\echarts\doc\asset\fonts\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\ico\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\img\about\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\img\doc\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\img\example\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\img\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\js\esl\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\asset\js\jquery-1.10.2.min.map" />
+    <Content Include="assets\js\echarts\doc\asset\js\jquery.min.map" />
+    <Content Include="assets\js\echarts\doc\asset\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\geoJson\continent_geo.json" />
+    <Content Include="assets\js\echarts\doc\example\geoJson\HK_geo.json" />
+    <Content Include="assets\js\echarts\doc\example\geoJson\UK_geo.json" />
+    <Content Include="assets\js\echarts\doc\example\geoJson\USA_geo.json" />
+    <Content Include="assets\js\echarts\doc\example\geoJson\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\svg\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\theme\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\10-me-china\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\24-population-china\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\24-population-china\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\topic\aqi-china\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\webkit-dep.html.bak" />
+    <Content Include="assets\js\echarts\doc\example\www2\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\www2\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\www\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\example\www\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\css\print\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\README.md" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\beige.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\default.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\moon.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\night.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\serif.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\simple.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\sky.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\solarized.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\source\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\template\mixins.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\template\settings.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\template\theme.scss" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\template\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\css\theme\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\css\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\img\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\lib\css\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\league_gothic-webfont.eot" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\league_gothic-webfont.ttf" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\league_gothic-webfont.woff" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\league_gothic_license" />
+    <Content Include="assets\js\echarts\doc\slide\lib\font\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\lib\js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\highlight\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\markdown\example.md" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\markdown\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\multiplex\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes-server\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\notes\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\postmessage\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\print-pdf\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\remotes\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\search\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\plugin\zoom-js\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\slide\vssver2.scc" />
+    <Content Include="assets\js\echarts\doc\vssver2.scc" />
+    <Content Include="assets\js\echarts\package.json" />
+    <Content Include="assets\js\echarts\README.md" />
+    <Content Include="assets\js\echarts\src\chart\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\component\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\theme\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\mapData\geoJson\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\an_hui_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\ao_men_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\bei_jing_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\china_city.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\china_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\chong_qing_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\fu_jian_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\gan_su_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\guang_dong_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\guang_xi_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\gui_zhou_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\hai_nan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\hei_long_jiang_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\he_bei_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\he_nan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\hu_bei_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\hu_nan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\jiang_su_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\jiang_xi_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\ji_lin_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\liao_ning_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\nei_meng_gu_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\ning_xia_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\qing_hai_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\shang_hai_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\shan_dong_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\shan_xi_1_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\shan_xi_2_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\si_chuan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\tai_wan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\tian_jin_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\world_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\xiang_gang_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\xin_jiang_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\xi_zang_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\yun_nan_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\geoJson\zhe_jiang_geo.json" />
+    <Content Include="assets\js\echarts\src\util\mapData\rawData\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\mapData\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\projection\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\shape\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\util\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\zrender\src\animation\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\zrender\src\lib\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\zrender\src\shape\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\zrender\src\tool\vssver2.scc" />
+    <Content Include="assets\js\echarts\src\zrender\src\vssver2.scc" />
+    <Content Include="assets\js\echarts\test\allchart\vssver2.scc" />
+    <Content Include="assets\js\echarts\test\performance\vssver2.scc" />
+    <Content Include="assets\js\echarts\vssver2.scc" />
+    <Content Include="assets\js\libs\vssver2.scc" />
+    <Content Include="assets\js\plugins\datatables\tabletools\swf\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-darkgray\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-green\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-skyblue\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-twitter\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-violet\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-yellowsimple\vssver2.scc" />
+    <Content Include="assets\js\tip\tip-yellow\vssver2.scc" />
+    <Content Include="assets\js\tip\vssver2.scc" />
+    <Content Include="assets\js\vssver2.scc" />
+    <Content Include="assets\js\zrender\src\animation\vssver2.scc" />
+    <Content Include="assets\js\zrender\src\lib\vssver2.scc" />
+    <Content Include="assets\js\zrender\src\shape\vssver2.scc" />
+    <Content Include="assets\js\zrender\src\tool\vssver2.scc" />
+    <Content Include="assets\js\zrender\src\vssver2.scc" />
+    <Content Include="assets\src\tip-darkgray\vssver2.scc" />
+    <Content Include="assets\src\tip-green\vssver2.scc" />
+    <Content Include="assets\src\tip-skyblue\vssver2.scc" />
+    <Content Include="assets\src\tip-twitter\vssver2.scc" />
+    <Content Include="assets\src\tip-violet\vssver2.scc" />
+    <Content Include="assets\src\tip-yellowsimple\vssver2.scc" />
+    <Content Include="assets\src\tip-yellow\vssver2.scc" />
+    <Content Include="assets\src\vssver2.scc" />
+    <Content Include="bootstrap\css\vssver2.scc" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\vssver2.scc" />
+    <Content Include="bootstrap\js\vssver2.scc" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="plugins\autosize\jquery.autosize.min.js" />
+    <Content Include="plugins\blockui\jquery.blockUI.min.js" />
+    <Content Include="plugins\bootbox\bootbox.min.js" />
+    <Content Include="plugins\bootstrap-colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="plugins\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="plugins\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="plugins\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="plugins\bootstrap-inputmask\jquery.inputmask.min.js" />
+    <Content Include="plugins\bootstrap-multiselect\bootstrap-multiselect.min.js" />
+    <Content Include="plugins\bootstrap-switch\bootstrap-switch.min.js" />
+    <Content Include="plugins\bootstrap-timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="plugins\bootstrap-wysihtml5\bootstrap-wysihtml5.min.js" />
+    <Content Include="plugins\bootstrap-wysihtml5\wysihtml5.min.js" />
+    <Content Include="plugins\cookie\jquery.cookie.js" />
+    <Content Include="plugins\cookie\jquery.cookie.min.js" />
+    <Content Include="plugins\datatables\DT_bootstrap.js" />
+    <Content Include="plugins\datatables\img\sort_asc.png" />
+    <Content Include="plugins\datatables\img\sort_asc_disabled.png" />
+    <Content Include="plugins\datatables\img\sort_both.png" />
+    <Content Include="plugins\datatables\img\sort_desc.png" />
+    <Content Include="plugins\datatables\img\sort_desc_disabled.png" />
+    <Content Include="plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="plugins\datatables\responsive\datatables.responsive.js" />
+    <Content Include="plugins\datatables\responsive\img\minus.png" />
+    <Content Include="plugins\datatables\responsive\img\plus.png" />
+    <Content Include="plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="plugins\daterangepicker\moment.min.js" />
+    <Content Include="plugins\duallistbox\jquery.duallistbox.min.js" />
+    <Content Include="plugins\easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="plugins\event.swipe\jquery.event.move.js" />
+    <Content Include="plugins\event.swipe\jquery.event.swipe.js" />
+    <Content Include="plugins\fileinput\fileinput.js" />
+    <Content Include="plugins\flot\excanvas.min.js" />
+    <Content Include="plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="plugins\flot\jquery.flot.axislabels.js" />
+    <Content Include="plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="plugins\flot\jquery.flot.growraf.min.js" />
+    <Content Include="plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="plugins\flot\jquery.flot.min.js" />
+    <Content Include="plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="plugins\flot\jquery.flot.orderBars.min.js" />
+    <Content Include="plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="plugins\flot\jquery.flot.tickrotor.js" />
+    <Content Include="plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="plugins\globalize\cultures\globalize.culture.de-DE.js" />
+    <Content Include="plugins\globalize\cultures\globalize.culture.ja-JP.js" />
+    <Content Include="plugins\globalize\globalize.js" />
+    <Content Include="plugins\gmaps\gmaps.min.js" />
+    <Content Include="plugins\inputlimiter\jquery.inputlimiter.min.js" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="plugins\jquery-ui\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="plugins\jquery-ui\jquery.ui.1.10.2.ie.css" />
+    <Content Include="plugins\knob\jquery.knob.min.js" />
+    <Content Include="plugins\nestable\jquery.nestable.min.js" />
+    <Content Include="plugins\noty\jquery.noty.js" />
+    <Content Include="plugins\noty\layouts\top.js" />
+    <Content Include="plugins\noty\themes\default.js" />
+    <Content Include="plugins\nprogress\nprogress.js" />
+    <Content Include="plugins\pickadate\picker.date.js" />
+    <Content Include="plugins\pickadate\picker.js" />
+    <Content Include="plugins\pickadate\picker.time.js" />
+    <Content Include="plugins\respond\respond.min.js" />
+    <Content Include="plugins\select2\select2-spinner.gif" />
+    <Content Include="plugins\select2\select2.min.js" />
+    <Content Include="plugins\select2\select2.png" />
+    <Content Include="plugins\select2\select2x2.png" />
+    <Content Include="plugins\slimscroll\jquery.slimscroll.horizontal.min.js" />
+    <Content Include="plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="plugins\touchpunch\jquery.ui.touch-punch.min.js" />
+    <Content Include="plugins\typeahead\typeahead.min.js" />
+    <Content Include="plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="plugins\uniform\images\bg-input.png" />
+    <Content Include="plugins\uniform\images\sprite.png" />
+    <Content Include="plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="plugins\validation\additional-methods.min.js" />
+    <Content Include="plugins\validation\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\PostItem.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Services\vssver2.scc" />
+    <Content Include="Views\Manager\ProgramInfo.cshtml" />
+    <Content Include="Views\Shared\Title.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\RoleInfo.cshtml" />
+    <Content Include="Views\Manager\UserInfo.cshtml" />
+    <Content Include="Views\Manager\StatusInfo.cshtml" />
+    <Content Include="Views\Manager\TypeInfo.cshtml" />
+    <Content Include="Views\Manager\SenseWord.cshtml" />
+    <Content Include="Views\Manager\Category.cshtml" />
+    <Content Include="Views\Manager\PostHistory.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Shared\HeaderFront.cshtml" />
+    <Content Include="Views\Manager\UserInfoSelf.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Manager\ChangePassWord.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Error\" />
+    <Folder Include="assets\js\echarts\src\util\mapData\china\" />
+    <Folder Include="assets\js\echarts\src\util\mapData\rawData\china\" />
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManagerSO\ManagerSO.csproj">
+      <Project>{aab752b0-5cec-46f5-a244-bfafb48e26cb}</Project>
+      <Name>ManagerSO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemSO\SystemSO.csproj">
+      <Project>{66e53009-965d-44c4-a7d4-c64775f58a6b}</Project>
+      <Name>SystemSO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49307</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/FleaMarketMS</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

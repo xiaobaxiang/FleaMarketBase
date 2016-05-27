@@ -1,0 +1,13 @@
+﻿<configure>
+  <Server ID="0" TYPE="default" DEBUG="1" NAME="DB">
+    <ServerName>127.0.0.1</ServerName>
+    <DBName>FleaMarket</DBName>
+    <LoginID>021717</LoginID>
+    <Password>021717</Password>
+    <Provider>0</Provider>
+    <log>0</log>
+  </Server>
+	<CONNECT SERVICE_ID="FleaMarket">0</CONNECT>
+</configure>
+
+

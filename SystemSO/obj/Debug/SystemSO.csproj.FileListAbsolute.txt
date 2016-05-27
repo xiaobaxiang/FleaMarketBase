@@ -1,0 +1,6 @@
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\bin\Debug\SystemSO.dll
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\bin\Debug\SystemSO.pdb
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\bin\Debug\MESIII.dll
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.dll
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.pdb
+C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.csprojResolveAssemblyReference.cache

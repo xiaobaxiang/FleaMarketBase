@@ -1,0 +1,47 @@
+﻿@model MES.Models.UserModel
+@using System.Data;
+@using System.Xml;
+@using MESIII;
+@using System.Text.RegularExpressions;
+
+@{
+    CmnSrvLib cmn = new CmnSrvLib();
+
+    XmlDocument oUserProgram = new XmlDocument();
+    oUserProgram.LoadXml(Session["USER_PROGRAM"].ToString());
+    XmlNodeList ns2 = oUserProgram.SelectNodes("//root/QryProgramInfo002");
+}
+<div id="sidebar" class="sidebar-fixed">
+    <div id="sidebar-content">
+        <ul id="nav" style="margin: 0px;">
+            <li class="current open">
+                <a href="javascript:void(0);"><i class="icon-desktop"></i>功能选项</a>
+                <ul class="sub-menu">
+                    @foreach (XmlNode node2 in ns2)
+                    {
+                        var path = node2.SelectSingleNode("Path").InnerText;
+                        var PROGRAM_PACK = Regex.Match(path,"^/(\\w+)/(\\w+)$").Groups[1].Value;
+                        var PROGRAM_NO = Regex.Match(path, "^/(\\w+)/(\\w+)$").Groups[2].Value;
+                        var PROGRAM_NAME_CH = node2.SelectSingleNode("ProgramName").InnerText;
+                        var PROGRAM_PATH = "";
+                        var ACTIVE_FLAG = "";
+
+                        PROGRAM_PATH = Url.Action(PROGRAM_NO, PROGRAM_PACK);
+                        if(PROGRAM_PATH.Equals(Request.Path))
+                        {
+                            ACTIVE_FLAG = "current";
+                        }
+                        <li class="@ACTIVE_FLAG">
+                            <a href="@PROGRAM_PATH"><i class="icon-angle-right"></i>@PROGRAM_NAME_CH</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+        <div class="sidebar-title">
+            <span>
+            </span>
+        </div>
+    </div>
+    <div id="divider" class="resizeable"></div>
+</div>

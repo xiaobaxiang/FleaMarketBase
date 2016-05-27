@@ -1,0 +1,89 @@
+﻿@model MES.Models.UserModel
+@using System.Data;
+@using System.Xml;
+@using MES.Services;
+@using MESIII;
+
+<header class="header navbar navbar-fixed-top" role="banner">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class="nav-toggle">
+                <a href="javascript:void(0);" title=""><i class="icon-reorder"></i></a>
+            </li>
+        </ul>
+        <div id="HeaderTool">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")" style="height: 48px;">
+                <img src="@Url.Content("~/assets/img/logo.gif")" alt="logo" />
+                <strong>实时二手信息</strong>
+            </a>
+            <a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation">
+                <i class="icon-reorder"></i>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown user">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    @{string userpath = ""; if (Session["UserIcon"] == null) { userpath = "default.png"; } else { userpath = Session["UserIcon"].ToString(); }}
+                <i><img class="userIcon" src="~/assets/userIcon/@userpath" /></i>
+                @if (Session["UserName"] != null)
+                {
+                    <span class="username">@Session["UserName"].ToString()</span>
+                }
+                else
+                {
+                    <span class="username"></span>
+                }
+                <i class="icon-caret-down small"></i>
+            </a>
+            <ul class="dropdown-menu" id="userMenu">
+                @if (Session["UserName"] == null)
+                {
+                    <li><a href="#" data-toggle="modal" data-target="#modalLogin"><i class="icon-signin"></i>登陆</a></li>
+                    <li><a href="#"><i class="icon-pencil"></i>注册</a></li>
+                }
+                else
+                {
+                    <li><a href="#" data-toggle="modal" data-target="#modalPost"><i class="icon-user"></i>发表</a></li>
+                    <li><a href="@Url.Action("PostHistory","Manager")"><i class="icon-user-md"></i>个人中心</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:cap_logout();"><i class="icon-key"></i>退出</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+</div>
+</header>
+
+<!-- Modal -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title edit">xmldoc.SelectSingleNode("//CHANGE_PWD").InnerText</h4>
+                <span id="ChangePwdTip" style="display: none; color: red">xmldoc.SelectSingleNode("//CHANGE_PWD_TPI").InnerText </span>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal row-border" id="password-form" action="#">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">xmldoc.SelectSingleNode("//NEW_PWD").InnerText<span class="required">*</span></label>
+                        <div class="col-md-9">
+                            <input type="password" id="txtNewPwd" name="txtNewPwd" class="form-control required" placeholder="xmldoc.SelectSingleNode(" />/NEW_PWD").InnerText" data-msg-required="xmlError.SelectSingleNode("//E0003").InnerText">
+                        </div>
+                    </div>
+                </form>
+                <div class="alert fade in alert-danger" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">xmldoc.SelectSingleNode("//CLOSE").InnerText</button>
+                <button type="button" class="btn btn-primary" onclick="javascript:cap_changpwd();">xmldoc.SelectSingleNode("//SAVE").InnerText</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+

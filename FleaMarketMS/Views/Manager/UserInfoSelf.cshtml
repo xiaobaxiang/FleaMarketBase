@@ -1,0 +1,63 @@
+﻿@Html.Partial("Title")
+
+<div id="lstData" class="row">
+    <div class="col-sm-12 col-md-12">
+        <div class="widget box">
+            <div class="widget-content">
+                <form class="form-horizontal row-border" enctype="multipart/form-data" action="@Url.Action("UserInfoSelf", "Manager")" id="UserSelf-form" method="post">
+                    <input type="hidden" name="UserID" value="@ViewBag.UserID" />
+                    <div class="form-group">
+                        <div class="col-sm-12 col-md-12">
+                            <div style="width:180px;display:block;margin:0 auto;">
+                                <img style="width:50px;height:50px;display :block;margin:0 auto;" src="~/assets/userIcon/@ViewBag.IconSrc" />
+                                <input type="hidden" id="txtIconSrc" name="txtIconSrc" value="@ViewBag.IconSrc" />
+                                <input style="width:180px;display :block;" type="file" id="fileUserIcon" name="fileUserIcon" class="btn-sm btn-info" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">用户登陆账号<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="hidden" name="UserNO" value="@ViewBag.UserNO" />
+                            <label class="control-label">@ViewBag.UserNO</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">用户名<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="text" id="txtUserName" name="txtUserName" value="@ViewBag.UserName" class="form-control required" placeholder="请输入用户名" data-msg-required="请输入用户名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">手机号</label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="text" id="txtMobilePhone" name="txtMobilePhone" value="@ViewBag.MobilePhone" maxlength="11" class="form-control tel" placeholder="请输入手机号" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">邮箱</label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="text" id="txtEmail" name="txtEmail" value="@ViewBag.Email" class="form-control email" placeholder="请输入邮箱" />
+                        </div>
+                        @{var cssclass = ""; if (ViewBag.IsValidate == 0&&ViewBag.Email!="") { cssclass = "show"; } else { cssclass = "hide"; }}
+                        <div class="col-sm-2 col-md-2"><button class="btn-sm btn-info @cssclass">验证</button></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="btnSave" class="btn btn-primary pull-right">保存</button>
+                    </div>
+                </form>
+            </div>
+            <div class="alert fade in alert-danger" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#btnSave").click(function () {
+            if ($("#UserSelf-form").valid()) {
+                $("#UserSelf-form").submit();
+            }
+        });
+    });
+</script>
