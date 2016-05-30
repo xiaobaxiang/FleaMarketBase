@@ -374,13 +374,14 @@ namespace ManagerSO
                 //***********************************************************************
                 XmlDocument x = new XmlDocument();
                 x.LoadXml(oArgsTx.Param);
-                int UserID = cmn.ParserXML(x, "//UserInfo/UserID", -999);
+                int UserID = cmn.ParserXML(x, "//UserInfo/UserID", -999,false);
                 string UserNO = cmn.ParserXML(x, "//UserInfo/UserNO", false);
                 string UserName = cmn.ParserXML(x, "//UserInfo/UserName", false);
                 string MobilePhone = cmn.ParserXML(x, "//UserInfo/MobilePhone", false);
                 string PassWD = cmn.ParserXML(x, "//UserInfo/PassWD",false);
                 string Email = cmn.ParserXML(x, "//UserInfo/Email", false);
                 string IconSrc = cmn.ParserXML(x, "//UserInfo/IconSrc", false);
+                if (IconSrc.Equals("")) { IconSrc = "default.png"; }
                 string LastLoginTime = cmn.ParserXML(x, "//UserInfo/LastLoginTime", false);
                 string LastLoginIP = cmn.ParserXML(x, "//UserInfo/LastLoginIP", false);
                 int LoginCount = cmn.ParserXML(x, "//UserInfo/LoginCount", -999,false);
@@ -399,7 +400,8 @@ namespace ManagerSO
                         string current = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
                         if (UserNO.Equals("")) { throw new MyException("用户登陆账号不能为空"); }
                         if (UserName.Equals("")) { throw new MyException("用户名不能为空"); }
-                        if (PassWD.Equals("")) { PassWD = cmn.MyEncode001(UserNO); }
+                        if (PassWD.Equals("")) { throw new MyException("密码不能为空"); }
+                        PassWD = cmn.MyEncode001(PassWD);
                         if (LastLoginTime.Equals("")) { LastLoginTime = current; }
                         if (LastLoginIP.Equals("")) { LastLoginIP = "0.0.0.0"; }
                         if (LoginCount <= -1) { LoginCount = 1; }

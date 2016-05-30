@@ -88,6 +88,30 @@ namespace FleaMarketMS.Controllers
             return View(userModel);
         }
 
+        public ActionResult Review(UserModel userModel)
+        {
+            userModel.CURR_DOMAIN = "";
+            userModel.CURR_PACKAGE = "管理";
+            userModel.CURR_PROGRAM = "信息审核";
+            return View(userModel);
+        }
+
+        public ActionResult Attention(UserModel userModel)
+        {
+            userModel.CURR_DOMAIN = "";
+            userModel.CURR_PACKAGE = "管理";
+            userModel.CURR_PROGRAM = "关注信息";
+            return View(userModel);
+        }
+
+        public ActionResult Search(UserModel userModel)
+        {
+            userModel.CURR_DOMAIN = "";
+            userModel.CURR_PACKAGE = "管理";
+            userModel.CURR_PROGRAM = "搜索";
+            return View(userModel);
+        }
+
         [HttpGet]
         public ActionResult UserInfoSelf(UserModel userModel)
         {

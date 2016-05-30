@@ -4,3 +4,8 @@ C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\bin\Deb
 C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.dll
 C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.pdb
 C:\Users\bwx\documents\visual studio 2013\Projects\FleaMarketMS\SystemSO\obj\Debug\SystemSO.csprojResolveAssemblyReference.cache
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\bin\Debug\SystemSO.dll
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\bin\Debug\SystemSO.pdb
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\bin\Debug\MESIII.dll
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\obj\Debug\SystemSO.dll
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\obj\Debug\SystemSO.pdb

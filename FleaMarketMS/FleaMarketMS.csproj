@@ -1427,6 +1427,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Manager\ChangePassWord.cshtml" />
+    <Content Include="Views\Manager\Review.cshtml" />
+    <Content Include="Views\Manager\Attention.cshtml" />
+    <Content Include="Views\Manager\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Error\" />

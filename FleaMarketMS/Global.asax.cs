@@ -43,7 +43,7 @@ namespace FleaMarketMS
 
             Session["AUTHENTICATED"] = false;
             Session["LOGIN_NO"] = "";
-            Session["USER_ID"] = 7;
+            Session["USER_ID"] =-2;
             Session["ROLE_ID"] = -1;
             Session["DEPT_ID"] = -1;
             Session["ROLE_NAME"] = "";

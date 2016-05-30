@@ -44,8 +44,8 @@
                 <ul class="dropdown-menu" id="userMenu">
                     @if (Session["UserName"] == null)
                     {
-                        <li><a href="#" id='PasswordModal' data-toggle="modal"><i class="icon-signin"></i>登陆</a></li>
-                        <li><a href="#"><i class="icon-pencil"></i>注册</a></li>
+                        <li><a href="#" id='LoginBtn' data-toggle="modal"><i class="icon-signin"></i>登陆</a></li>
+                        <li><a href="#" id="RegisterBtn"><i class="icon-pencil"></i>注册</a></li>
                     }
                     else
                     {
@@ -60,32 +60,116 @@
     </div>
 </header>
 
+<!-- Modal登陆 -->
+<div class="modal fade" id="modalLogin" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">登 陆</h4>
+            </div>
+            <div class="modal-body">
+                <form id="login_form" class=" form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">账号<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="text" id="txtUserNO" name="txtUserNO" class="form-control required" placeholder="请输入账号" data-msg-required="请输入账号" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 col-md-2 control-label">密码<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-8">
+                            <input type="password" id="txtPassWD" name="txtPassWD" class="form-control required" placeholder="请输入密码" data-msg-required="请输入密码" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span class="alert fade in alert-danger" style="display: none;"></span>
+                <button type="button" id="login_close" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="login_confirm" class="btn btn-primary">登陆</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title edit">注 册</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="register-form" action="#">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">账  号<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-6">
+                            <input type="text" maxlength="20" id="txtRegisterUserNO" name="txtUserNO" class="form-control required" placeholder="请输入账号" data-msg-required="请输入账号">
+                        </div>
+                        <div class="col-sm-3 col-md-3 control-label" style="display:none;color:red" id="txtRegisterUserNOError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3  control-label">用户名<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-6">
+                            <input type="text" maxlength="50" id="txtRegisterUserName" name="txtUserName" class="form-control required" placeholder="请输入用户名" data-msg-required="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">密  码<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-6">
+                            <input type="password" maxlength="50" id="txtRegisterPassWD" name="txtPassWD" class="form-control required" placeholder="请输入密码" data-msg-required="请输入密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">确认密码<span class="required">*</span></label>
+                        <div class="col-sm-6 col-md-6">
+                            <input type="password" maxlength="50" id="txtRegisterRePassWD" name="txtRePassWD" class="form-control required" placeholder="请确认密码" data-msg-required="请确认密码">
+                        </div>
+                        <div class="col-sm-3 col-md-3 control-label" style="display:none;color:red" id="txtRegisterPasswdError"></div>
+                    </div>
+                </form>
+                <div class="alert fade in alert-danger" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <span class="alert-danger" id="registerError" style="display: none;"></span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="registerConfirm">确认</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 <script>
     $(function () {
-        $("#PasswordModal").click(function () {
+        $("#LoginBtn").click(function () {
             cap_clear("#login_form");
             $("#modalLogin .alert").hide().text('');
             $("#modalLogin").modal('show');
         });
 
-        $("#login_confirm").click(function () {
-            if ($("#login_form").valid()) {
+        function loginIn(UserNO, Passwd) {
+            if (typeof (UserNO) != 'undefined' && UserNO != '' && typeof (Passwd) != 'undefined' && Passwd != '') {
                 $.ajax({
                     url: "@Url.Action("Login", "Home")",
                     type: "POST",
                     async: false,
                     dataType: "json",
                     data: {
-                        UserNO: $("#txtUserNO").val(),
-                        PassWD: $("#txtPassWD").val()
+                        UserNO: UserNO,
+                        PassWD: Passwd
                     },
                     success: function (data, textStatus, xhr) {
                         if (data.msg == "success") {
                             $("#userMenu").children().remove();
-                            var html="<li><a href='#' data-toggle='modal' id='PostMSG'><i class='icon-user'></i>发表</a></li>";
-                            html+="<li><a href=\"@Url.Action("PostHistory","Manager")\"><i class='icon-user-md'></i>个人中心</a></li>";
-                            html+="<li class='divider'></li>"
-                            html+=" <li><a href=\"javascript:cap_logout();\"><i class='icon-key'></i>退出</a></li>";
+                            var html = "<li><a href='#' data-toggle='modal' id='PostMSG'><i class='icon-user'></i>发表</a></li>";
+                            html += "<li><a href=\"@Url.Action("PostHistory","Manager")\"><i class='icon-user-md'></i>个人中心</a></li>";
+                            html += "<li class='divider'></li>"
+                            html += " <li><a href=\"javascript:cap_logout();\"><i class='icon-key'></i>退出</a></li>";
                             $("#userMenu").append($(html));
                             $("#userdrop .userIcon").prop("src", data.usericon);
                             $("#userdrop .username").text(data.username);
@@ -98,41 +182,89 @@
                         }
                     }
                 });
+
+            }
+        }
+
+        $("#login_confirm").click(function () {
+            if ($("#login_form").valid()) {
+                loginIn($("#txtUserNO").val(), $("#txtPassWD").val());
             }
         });
-    });
+
+        $("#RegisterBtn").click(function () {
+            cap_clear("#register-form");
+            $("#txtRegisterUserNOError").text('').hide();
+            $("#txtRegisterPasswdError").text('').hide();
+            $("#registerError").text('').hide();
+            $("#registerModal").modal('show');
+        });
 
 
-    @*function cap_changpwd() {
-        if ($("#password-form").valid()) {
-            if ("@Session["LOGIN_NO"]" != $("#txtNewPwd").val()) {
+        $("#txtRegisterUserNO").focus(function () {
+            $("#txtRegisterUserNOError").text('').hide();
+        });
+        $("#txtRegisterUserNO").blur(function () {
+            if ($(this).val().length > 0) {
                 $.ajax({
-                    url: "@Url.Action("TxChangePassword", "SYS")",
+                    url: "@Url.Action("CheckUserNO", "Home")",
                     type: "POST",
                     async: false,
                     dataType: "json",
                     data: {
-                        "TxType": "C",
-                        "USER_ID": parseInt("@Session["USER_ID"]"),
-                        "NEW_PASSWORD": $("#txtNewPwd").val()
+                        UserNO: $("#txtRegisterUserNO").val()
                     },
-                    success: function (data, textStatus, xhr) {
-                        if (data.msg == "OK") {
-                            $('#passwordModal').modal('hide');
+                    success: function (data) {
+                        if (data.msg == "success") {
+                            $("#txtRegisterUserNOError").text('').hide();
                         }
-                        else {
+                        else if (data.msg == "fail") {
+                            $("#txtRegisterUserNOError").show().text('已存在');
+                        } else {
                             cap_alert(data.error_desc);
                         }
                     }
                 });
             }
-            else {
-                $("#txtNewPwd").val("");
-                setTimeout("$('#txtNewPwd').focus()", 1000);
-                $(".alert").html("");
-                $(".alert").hide();
-                cap_alert("新密码不能与用户名相同!");
+        });
+
+        $("#txtRegisterRePassWD").focus(function () {
+            $("#txtRegisterPasswdError").text('').hide();
+        })
+        $("#txtRegisterRePassWD").blur(function () {
+            if ($("#txtRegisterPassWD").val() != $(this).val()) {
+                $("#txtRegisterPasswdError").text('密码不一致').show();
+            } else {
+                $("#txtRegisterPasswdError").text('').hide();
             }
-        }
-    }*@
+        });
+
+        $("#registerConfirm").click(function () {
+            if ($("#register-form").valid() && $("#txtRegisterUserNOError").text() == '' && $("#txtRegisterPasswdError").text() == '') {
+                $.ajax({
+                    url: "@Url.Action("RegisterUser", "Home")",
+                    type: "POST",
+                    async: false,
+                    dataType: "json",
+                    data: {
+                        UserNO: $("#txtRegisterUserNO").val(),
+                        UserName: $("#txtRegisterUserName").val(),
+                        PassWD: $("#txtRegisterPassWD").val()
+                    },
+                    success: function (data, textStatus, xhr) {
+                        if (data.msg == "success") {
+                            $("#registerModal").modal('hide');
+                            loginIn($("#txtRegisterUserNO").val(), $("#txtRegisterPassWD").val());
+                        }
+                        else {
+                            $("#registerError").text(data.error_desc).show();
+                        }
+                    }
+                });
+            }
+        });
+
+
+    });
+
 </script>
