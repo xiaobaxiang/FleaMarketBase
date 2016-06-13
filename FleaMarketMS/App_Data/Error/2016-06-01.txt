@@ -1,0 +1,760 @@
+=========================出错了!==============================
+出错时间:2016-06-01 01:16:45
+错误源:System.Web.Mvc
+异常消息:对于“FleaMarketMS.Controllers.ManagerController”中方法“Void TxPostMsg001(System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)”的不可以为 null 的类型“System.Int32”的参数“UserID”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+当前方法:System.Object ExtractParameterFromDictionary(System.Reflection.ParameterInfo, System.Collections.Generic.IDictionary`2[System.String,System.Object], System.Reflection.MethodInfo)
+堆栈信息:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 02:27:55
+错误源:System.Web.Mvc
+异常消息:对于“FleaMarketMS.Controllers.ManagerController”中方法“Void TxPostMsg001(System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)”的不可以为 null 的类型“System.Int32”的参数“UserID”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+当前方法:System.Object ExtractParameterFromDictionary(System.Reflection.ParameterInfo, System.Collections.Generic.IDictionary`2[System.String,System.Object], System.Reflection.MethodInfo)
+堆栈信息:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 02:38:23
+错误源:System.Web.Mvc
+异常消息:对于“FleaMarketMS.Controllers.ManagerController”中方法“Void TxPostMsg001(System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)”的不可以为 null 的类型“System.Int32”的参数“UserID”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+当前方法:System.Object ExtractParameterFromDictionary(System.Reflection.ParameterInfo, System.Collections.Generic.IDictionary`2[System.String,System.Object], System.Reflection.MethodInfo)
+堆栈信息:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 02:39:21
+错误源:System.Web.Mvc
+异常消息:对于“FleaMarketMS.Controllers.ManagerController”中方法“Void TxPostMsg001(System.String, Int32, Int32, Int32, System.String, System.String, System.String, System.String)”的不可以为 null 的类型“System.Int32”的参数“UserID”，参数字典包含一个 null 项。可选参数必须为引用类型、可以为 null 的类型或声明为可选参数。
+参数名: parameters
+当前方法:System.Object ExtractParameterFromDictionary(System.Reflection.ParameterInfo, System.Collections.Generic.IDictionary`2[System.String,System.Object], System.Reflection.MethodInfo)
+堆栈信息:   在 System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   在 System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__18(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__3(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass4.<MakeVoidDelegate>b__3(IAsyncResult ar)
+   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:15:41
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:19:37
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:20:14
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:20:44
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:21:01
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:22:17
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:25:08
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:25:41
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:33:36
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:34:01
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:36:39
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:38:36
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:39:19
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:39:59
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:41:16
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:43:08
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:43:49
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:44:19
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:45:37
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:47:11
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:48:01
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:48:21
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:49:02
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:49:17
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:50:48
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:51:49
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 03:52:43
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 04:05:35
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 04:07:23
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 05:27:55
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0246: 未能找到类型或命名空间名称“Handler”(是否缺少 using 指令或程序集引用?)
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 05:30:24
+错误源:System.Web
+异常消息:f:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\assets\js\ueditor1_4_3_3-utf8-net\utf8-net\net\controller.ashx(13): error CS0433: 类型“Handler”同时存在于“c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\fleamarketms\67f96c93\a39dea2f\App_Code.bw_jz0y_.dll”和“c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\fleamarketms\67f96c93\a39dea2f\assembly\dl3\38e32fcb\0c826230_e8bbd101\FleaMarketMS.DLL”中
+当前方法:System.CodeDom.Compiler.CompilerResults Compile()
+堆栈信息:   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResult(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean ensureIsUpToDate)
+   在 System.Web.UI.SimpleHandlerFactory.System.Web.IHttpHandlerFactory2.GetHandler(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 06:38:17
+错误源:System.Web
+异常消息:从客户端(MsgContent="<p><img alt="截图.png"...")中检测到有潜在危险的 Request.Form 值。
+当前方法:Void ValidateString(System.String, System.String, System.Web.Util.RequestValidationSource)
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.<>c__DisplayClass9.<GetValue>b__4(IValueProvider provider)
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__17(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__2(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 06:44:11
+错误源:System.Web
+异常消息:从客户端(MsgContent="<p><br/><img alt="24...")中检测到有潜在危险的 Request.Form 值。
+当前方法:Void ValidateString(System.String, System.String, System.Web.Util.RequestValidationSource)
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.<>c__DisplayClass9.<GetValue>b__4(IValueProvider provider)
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__17(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__2(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 06:46:55
+错误源:System.Web
+异常消息:从客户端(MsgContent="<p><br/><img alt="QQ...")中检测到有潜在危险的 Request.Form 值。
+当前方法:Void ValidateString(System.String, System.String, System.Web.Util.RequestValidationSource)
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.<>c__DisplayClass9.<GetValue>b__4(IValueProvider provider)
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__17(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__2(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+
+=========================出错了!==============================
+出错时间:2016-06-01 07:09:09
+错误源:System.Web
+异常消息:从客户端(MsgContent="<p>fasdf<br/></p>")中检测到有潜在危险的 Request.Form 值。
+当前方法:Void ValidateString(System.String, System.String, System.Web.Util.RequestValidationSource)
+堆栈信息:   在 System.Web.HttpRequest.ValidateString(String value, String collectionKey, RequestValidationSource requestCollection)
+   在 System.Web.HttpValueCollection.EnsureKeyValidated(String key)
+   在 System.Web.HttpValueCollection.GetValues(String name)
+   在 System.Web.Mvc.NameValueCollectionValueProvider.ValueProviderResultPlaceholder.GetResultFromCollection(String key, NameValueCollection collection, CultureInfo culture)
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Web.Mvc.NameValueCollectionValueProvider.GetValue(String key, Boolean skipValidation)
+   在 System.Web.Mvc.ValueProviderCollection.<>c__DisplayClass9.<GetValue>b__4(IValueProvider provider)
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   在 System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__1e(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Controller.<>c__DisplayClass1d.<BeginExecuteCore>b__17(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   在 System.Web.Mvc.MvcHandler.<>c__DisplayClass8.<BeginProcessRequest>b__2(AsyncCallback asyncCallback, Object asyncState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   在 System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+=============================================================
+

@@ -245,6 +245,10 @@
     <script type="text/javascript" src="@Url.Content("~/assets/js/custom.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/assets/js/demo/ui_buttons.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/assets/js/libs/jquery.pagination.js")"></script>
+    <!--Ueditor-->
+    <script type="text/javascript" charset="utf-8" src="@Url.Content("~/assets/ueditor/ueditor.config.js")"></script>
+    <script type="text/javascript" charset="utf-8" src="@Url.Content("~/assets/ueditor/ueditor.all.min.js")"> </script>
+    <script type="text/javascript" charset="utf-8" src="@Url.Content("~/assets/ueditor/lang/zh-cn/zh-cn.js")"></script>
 </head>
 <body>
 
@@ -265,7 +269,7 @@
         <div>
             <div class="container">
                 <div class="row">
-                    <div class="container">
+                    <div class="" style="margin-bottom:100px">
                         @RenderBody()
                     </div>
                 </div>
@@ -275,20 +279,46 @@
 
 
     <!-- Modal发表 -->
-    <div class="modal fade" id="modalPost" tabindex="-1" role="dialog">
+    <div class="modal fade" id="modalPostMSG" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form class="form-horizontal" id="PostMsg-form" action="#">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">信息发表</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="form-group col-sm-8 col-md-8" style="margin:0 15px 0 0">
+                                <label class="col-sm-3 col-md-3  control-label">标&nbsp;题<span class="required">*</span></label>
+                                <div class="col-sm-9 col-md-9">
+                                    <input type="text" maxlength="50" id="txtMsgTitle" name="txtMsgTitle" class="form-control required" placeholder="请输入标题" data-msg-required="请输入标题">
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-4 col-md-4">
+                                <label class="col-sm-4 col-md-4 control-label">类&nbsp;别<span class="required">*</span></label>
+                                <div class="col-sm-8 col-md-8">
+                                    <select id="cboCategory" name="cboCategory" class="form-control chcekValidate required"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-md-2 control-label">正&nbsp;文<span class="required">*</span></label>
+                            <div class="col-sm-10 col-md-10">
+                                <div id="txtMsgContent" style="width:100%">
+                                    <script id="editor" type="text/plain">
+                                    </script>
+                                </div>
+
+                                @*<input type="text" maxlength="500" id="txtMsgContent" name="txtMsgContent" class=" form-control required" placeholder="请输入正文" data-msg-required="请输入正文">*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关 闭</button>
+                        <button type="button" class="btn btn-primary" id="MsgSend">发 送</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -313,6 +343,56 @@
                 }
             });
         }
+
+        $(function(){
+
+            $("#PostMsg").click(function () {
+                $("#edui1").css("width",($(window).width())*0.7);
+                cap_clear("#PostMsg-form");
+                cap_category("@Url.Action("QryCategory001", "Manager")","#cboCategory","","CHOOSE");
+                $("#modalPostMSG").modal('show');
+                $("#modalPostMSG .modal-dialog").css("width",($(window).width())*0.9);
+            });
+
+            $("#MsgSend").click(function(){//发送信息
+                if($("#PostMsg-form").valid()&&UE.getEditor('editor').hasContents())
+                {
+                    $.ajax({
+                        url: "@Url.Action("TxPostMsg001", "Manager")",
+                        type: "POST",
+                        async: false,
+                        dataType: "json",
+                        data: {
+                            TxType:"A",
+                            MsgID:"-1",
+                            CategoryID:$("#cboCategory").val(),
+                            Title:$("#txtMsgTitle").val(),
+                            MsgContent:UE.getEditor('editor').getContent(),
+                            PictureSrc:'',
+                            StatusNO:''
+                        },
+                        success: function (data, textStatus, xhr) {
+                            if (data.msg == "OK") {
+                                $("#modalPostMSG").modal('hide');
+                                window.location = @Url.Action("Index", "Home");
+                            }
+                            else {
+                                cap_alert(data.error_desc);
+                            }
+                        },
+                        error:function(e){
+                            console.dir(e);
+                        }
+                    });
+                }
+            })
+
+            //实例化编辑器
+            //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+            var ue = UE.getEditor('editor');
+
+        })
+
     </script>
 </body>
 </html>

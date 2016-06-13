@@ -66,8 +66,9 @@ F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\SystemSO.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\WebGrease.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\ManagerSO.pdb
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\SystemSO.pdb
-F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\EntityFramework.xml
+F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\Newtonsoft.Json.pdb
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\Newtonsoft.Json.xml
+F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\EntityFramework.xml
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\System.Net.Http.xml
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\System.Net.Http.WebRequest.xml
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\System.Web.Mvc.xml
@@ -85,6 +86,6 @@ F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\zh-Hans\System.Web.Razor
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\zh-Hans\System.Web.WebPages.resources.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\obj\Debug\FleaMarketMS.csprojResolveAssemblyReference.cache
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\obj\Debug\FleaMarketMS.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\obj\Debug\FleaMarketMS.pdb
-F:\GitFile\FleaMarketMS\FleaMarketBase\FleaMarketMS\obj\Debug\FleaMarketMS.csprojResolveAssemblyReference.cache

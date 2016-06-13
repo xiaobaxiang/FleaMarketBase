@@ -87,6 +87,17 @@ jQuery(function ($) {
 
     }, "请输入正确的手机号格式");
 
+    $.validator.addMethod("chcekValidate", function (value, element) {
+
+        var res = false;
+        if (value == "-1" || value == "")
+            res = false;
+        else
+            res = true;
+        return this.optional(element) || (res);
+
+    }, "请选择值");
+
     $.datepicker.regional['zh-CN'] = {
         closeText: '关闭',
         prevText: '&#x3C;上月',
@@ -399,20 +410,69 @@ function cap_group(obj_url, obj_name, SELECT_NO, SELECT_TYPE) {
     });
 }
 
-//下拉表验证
-function validateSelect(validSelectid,errorVal,errorMsg) {
-    var valobj = $(validSelect);
-    var valGrandParent = $(validGroup).parent().parent();
-    if (valobj.val() == errorVal) {
-        valGrandParent.removeClass("has-success").addClass("has-error");
-        valobj.removeClass("has-success").parent().find("label").remove();
-        valobj.parent().append("<label class=\"has-error help-block\" >"+errorMsg+"</label>");
-    } else {
-        valobj.removeClass("has-error").addClass("has-success");
-        valobj.parent().find("label").remove();
-        return true;
-    }
-    return false;
+//GROUP_INFO DATA
+function cap_category(obj_url, obj_name, SELECT_NO, SELECT_TYPE) {
+    $.ajax({
+        type: "POST",
+        url: obj_url,
+        async: false,
+        dataType: "json",
+        data: {
+            "PAGE_INDEX": -1,
+            "PAGE_SIZE": -1,
+            "ORDER_BY": "",
+            "StatusNO": "A"
+        },
+        beforeSend: function () { $("#divload").show(); },
+        complete: function () { $("#divload").hide(); },
+        success: function (data) {
+            //Clear Combo Data               
+            var vItem = $(obj_name + " option").length;
+            $(obj_name + " option").each(function (index) {
+                if (index >= 0) $(this).remove();
+            });
+            //Add Combo Data
+            if (SELECT_TYPE == "ALL") { $(obj_name).append("<option value='-1'>ALL</option>"); }
+            if (SELECT_TYPE == "NA") { $(obj_name).append("<option value='-1'>N/A</option>"); }
+            if (SELECT_TYPE == "CHOOSE") { $(obj_name).append("<option value='-1'>请选择类别</option>"); }
+            if (data.msg == "OK") {
+                $.each(data.qrydata, function (i, item) {
+                    $(obj_name).append("<option value='" + item.CategoryID + "'>" + item.CategoryName + "</option>");
+                });
+            }
+            else {
+                cap_alert(data.error_desc);
+            }
+
+            if (SELECT_NO != "") {
+                $(obj_name).val(SELECT_NO);
+            }
+            else {
+                $(obj_name + " option").eq(0).attr('selected', 'true');
+            }
+        }
+    });
 }
 
+//下拉表验证  用上面的那种扩展方法的写法
+//function validateSelect(validSelectid, errorVal, errorMsg) {
+//    alert(222);
+//    var valobj = $(validSelectid);
+//    var valGrandParent = valobj.parent().parent();
+//    if (valobj.val() === errorVal) {
+//        valGrandParent.removeClass("has-success").addClass("has-error");
+//        valobj.removeClass("has-success").parent().find("label").remove();
+//        valobj.parent().append("<label class=\"has-error help-block\" >"+errorMsg+"</label>");
+//    } else {
+//        valobj.removeClass("has-error").addClass("has-success");
+//        valobj.parent().find("label").remove();
+//        return true;
+//    }
+//    return false;
+//}
 
+//jQuery.validator.addMethod("validateSelect", function (value, element, param) {
+//    var res = false;
+//    cosnole.dir(value);
+//    return this.optional(element) || res;
+//}, $.validator.format("请选择值"));

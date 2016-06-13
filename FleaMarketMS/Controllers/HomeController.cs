@@ -20,7 +20,31 @@ namespace FleaMarketMS.Controllers
         int nResult = -1;
         public ActionResult Index()
         {
-            return View();
+            userModel.CURR_DOMAIN = "";
+            userModel.CURR_PACKAGE = "";
+            userModel.CURR_PROGRAM = "二手市场";
+
+            int PAGE_INDEX = 1;
+            if (Request["PAGE_INDEX"] != null) { int.TryParse(Request["PAGE_INDEX"], out PAGE_INDEX); }
+            string sParam = "<root><PostMsg>";
+            sParam += "<MsgID>-1</MsgID>";
+            sParam += "<UserID>-1</UserID>";
+            sParam += "<CategoryID>-1</CategoryID>";
+            sParam += "<Title></Title>";
+            sParam += "<MsgContent></MsgContent>";
+            sParam += "<PictureSrc></PictureSrc>";
+            sParam += "<StatusNO>A</StatusNO>";
+            sParam += "</PostMsg>";
+            sParam += "<PAGE_INFO>";
+            sParam += "<PAGE_INDEX>" + PAGE_INDEX + "</PAGE_INDEX>";
+            sParam += "<PAGE_SIZE>20</PAGE_SIZE>";
+            sParam += "<ORDER_BY>a.AddDateTime DESC</ORDER_BY>";
+            sParam += "</PAGE_INFO>";
+            sParam += "</root>";
+            DataSet oDS = client.ctEnumerateData("ManagerSO.QryPostMsg002", sParam);
+            IEnumerable<PostMsg> postMsgls = oDS.Tables["QryPostMsg002"].TabeToList<PostMsg>();
+            ViewBag.PostMstLst = postMsgls;
+            return View(userModel);
         }
 
         public ActionResult Error()
@@ -64,7 +88,6 @@ namespace FleaMarketMS.Controllers
             }
             catch (Exception e1)
             {
-                userModel.MESSAGE = e1.Message;
                 string error_message = Microsoft.JScript.GlobalObject.escape(e1.Message);
                 res = "{\"status\" : \"error\",\"msg\": \"error\",\"error_desc\":\"" + error_message + "\"}";
             }
@@ -98,8 +121,8 @@ namespace FleaMarketMS.Controllers
                 sParam += "<UserNO>" + UserNO + "</UserNO>";
                 sParam += "<PassWD></PassWD>";
                 sParam += "</UserInfo></root>";
-                DataSet oDS = client.ctEnumerateData("ManagerSO.QryUserInfo001", sParam, -1, -1); 
-                if(cmn.CheckEOF(oDS))
+                DataSet oDS = client.ctEnumerateData("ManagerSO.QryUserInfo001", sParam, -1, -1);
+                if (cmn.CheckEOF(oDS))
                 {
                     res = "{\"status\" : \"ok\",\"msg\": \"fail\"}";
                 }
@@ -110,14 +133,13 @@ namespace FleaMarketMS.Controllers
             }
             catch (Exception e1)
             {
-                userModel.MESSAGE = e1.Message;
                 string error_message = Microsoft.JScript.GlobalObject.escape(e1.Message);
                 res = "{\"status\" : \"error\",\"msg\": \"error\",\"error_desc\":\"" + error_message + "\"}";
             }
             Response.Write(res);
         }
 
-        public void RegisterUser(string UserNO,string UserName, string PassWD)
+        public void RegisterUser(string UserNO, string UserName, string PassWD)
         {
             try
             {
@@ -129,21 +151,26 @@ namespace FleaMarketMS.Controllers
                 sParam += "<TypeNO>U</TypeNO>";
                 sParam += "</UserInfo></root>";
                 nResult = client.ctPostTxact("ManagerSO.TxUserInfo001", sParam, TxTypeConsts.TxTypeAddNew);
-                if(nResult>0)
+                if (nResult > 0)
                 {
                     res = "{\"status\" : \"ok\",\"msg\": \"success\"}";
-                }else
+                }
+                else
                 {
                     res = "{\"status\" : \"ok\",\"msg\": \"fail\"}";
                 }
             }
             catch (Exception e1)
             {
-                userModel.MESSAGE = e1.Message;
                 string error_message = Microsoft.JScript.GlobalObject.escape(e1.Message);
                 res = "{\"status\" : \"error\",\"msg\": \"error\",\"error_desc\":\"" + error_message + "\"}";
             }
             Response.Write(res);
+        }
+
+        public void uploadimage()//上传图片
+        {
+
         }
     }
 }

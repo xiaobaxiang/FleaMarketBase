@@ -9,3 +9,4 @@ F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\bin\Debug\SystemSO.pdb
 F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\bin\Debug\MESIII.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\obj\Debug\SystemSO.dll
 F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\obj\Debug\SystemSO.pdb
+F:\GitFile\FleaMarketMS\FleaMarketBase\SystemSO\obj\Debug\SystemSO.csprojResolveAssemblyReference.cache

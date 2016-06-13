@@ -55,6 +55,9 @@ namespace ManagerSO
                     //TxCategory001 -- DEAL Category DATA MAINTAIN
                     case "TxCategory001": nResult = Tx.TxCategory001(oArgsTx); break;
 
+                    //TxPostMsg001 -- DEAL PostMsg DATA MAINTAIN
+                    case "TxPostMsg001": nResult = Tx.TxPostMsg001(oArgsTx); break;
+
                     #endregion
                     default: throw new SystemException("Unkown transaction specifier [ " + sServiceID + " ]");
                 }
@@ -591,6 +594,88 @@ namespace ManagerSO
                         sql += "UpdateUserID=" + cmn.SQLQC(nUserID);
                         sql += "UpdateDateTime=" + cmn.SQLQ(DateTime.Now);
                         sql += " Where CategoryID =" + cmn.SQLQ(CategoryID);
+                        nResult = cmn.CmnExecute(sql, cmd);
+                        break;
+                    //***********************************************************************
+                }
+                return nResult;
+            }
+            #endregion
+
+            #region  //TxPostMsg001 -- DEAL PostMsg DATA MAINTAIN
+            public int TxPostMsg001(TArgsTX oArgsTx)
+            {
+                OleDbCommand cmd = oArgsTx.Command;
+                int nUserID = oArgsTx.Context.UserID();
+                tx = oArgsTx.ServiceID;
+                //***********************************************************************
+                XmlDocument x = new XmlDocument();
+                x.LoadXml(oArgsTx.Param);
+                int MsgID = cmn.ParserXML(x, "//PostMsg/MsgID", -999);
+                int UserID = cmn.ParserXML(x, "//PostMsg/UserID", -999);
+                int CategoryID = cmn.ParserXML(x, "//PostMsg/CategoryID", -999);
+                int ReplayCount = cmn.ParserXML(x, "//PostMsg/ReplayCount", 0,false);
+                int AttentionCount = cmn.ParserXML(x, "//PostMsg/AttentionCount", 0, false);
+                string Title = cmn.ParserXML(x, "//PostMsg/Title");
+                string MsgContent = x.SelectSingleNode("//PostMsg/MsgContent").InnerXml;
+                //string MsgContent = cmn.ParserXML(x, "//PostMsg/MsgContent");
+                string PictureSrc = cmn.ParserXML(x, "//PostMsg/PictureSrc");
+                string StatusNO = cmn.ParserXML(x, "//PostMsg/StatusNO");
+                //***********************************************************************
+
+                //DataSet oDS = new DataSet();
+                switch (oArgsTx.TxType)
+                {
+                    case TxTypeConsts.TxTypeAddNew:
+                        if (UserID <= -1) { throw new MyException("用户ID不能为空"); }
+                        if (CategoryID <= -1) { throw new MyException("类别ID不能为空"); }
+                        if (Title.Equals("")) { throw new MyException("消息标题不能为空"); }
+                        if (MsgContent.Equals("")) { throw new MyException("消息体不能为空"); }
+
+                        sql = " Insert Into PostMsg (UserID,CategoryID,Title,MsgContent,PictureSrc,ReplyCount,AttentionCount,StatusNO,";
+                        sql += "AddUserID,AddDateTime,UpdateUserID,UpdateDateTime)";
+                        sql += "Values(" + cmn.SQLQC(UserID) + cmn.SQLQC(CategoryID) + cmn.SQLQC(Title) + cmn.SQLQC(MsgContent) + cmn.SQLQC(PictureSrc) + cmn.SQLQC(0) + cmn.SQLQC(0) + cmn.SQLQC("A");
+                        sql += cmn.SQLQC(nUserID) + cmn.SQLQC(DateTime.Now) + cmn.SQLQC(nUserID) + cmn.SQLQ(DateTime.Now) + ")";
+                        nResult = cmn.CmnExecute(sql, cmd);
+                        break;
+                    //***********************************************************************
+                    case TxTypeConsts.TxTypeUpdate:
+                        if (MsgID <= -1) { throw new MyException("MsgID不能为空"); }
+                        if (UserID <= -1) { throw new MyException("用户ID不能为空"); }
+                        if (CategoryID <= -1) { throw new MyException("类别ID不能为空"); }
+                        if (Title.Equals("")) { throw new MyException("消息标题不能为空"); }
+                        if (MsgContent.Equals("")) { throw new MyException("消息体不能为空"); }
+
+                        sql = " Update PostMsg Set ";
+                        sql += "UserID=" + cmn.SQLQC(UserID);
+                        sql += "CategoryID=" + cmn.SQLQC(CategoryID);
+                        sql += "Title=" + cmn.SQLQC(Title);
+                        sql += "MsgContent=" + cmn.SQLQC(MsgContent);
+                        sql += "PictureSrc=" + cmn.SQLQC(PictureSrc);
+                        sql += "ReplayCount="+cmn.SQLQC(ReplayCount);
+                        sql += "AttentionCount=" + cmn.SQLQC(AttentionCount);
+                        sql += "UpdateUserID=" + cmn.SQLQC(nUserID);
+                        sql += "UpdateDateTime=" + cmn.SQLQ(DateTime.Now);
+                        sql += " Where MsgID =" + cmn.SQLQ(MsgID);
+                        nResult = cmn.CmnExecute(sql, cmd);
+                        break;
+                    //***********************************************************************
+                    case TxTypeConsts.TxTypeDelete:
+                        if (MsgID <= -1) { throw new MyException("MsgID不能为空"); }
+
+                        sql = " Delete From PostMsg Where MsgID =" + cmn.SQLQ(MsgID);
+                        nResult = cmn.CmnExecute(sql, cmd);
+                        break;
+                    //***********************************************************************
+                    case TxTypeConsts.TxTypeChange:
+                        if (MsgID.Equals("")) { throw new MyException("MsgID不能为空"); }
+                        if (StatusNO.Equals("")) { throw new MyException("状态编号不能为空"); }
+
+                        sql = " Update PostMsg Set ";
+                        sql += "StatusNO=" + cmn.SQLQC(StatusNO);
+                        sql += "UpdateUserID=" + cmn.SQLQC(nUserID);
+                        sql += "UpdateDateTime=" + cmn.SQLQ(DateTime.Now);
+                        sql += " Where MsgID =" + cmn.SQLQ(MsgID);
                         nResult = cmn.CmnExecute(sql, cmd);
                         break;
                     //***********************************************************************

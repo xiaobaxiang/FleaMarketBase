@@ -52,6 +52,12 @@ namespace ManagerSO
                     //QryCategory001 -- QUERY Category MODE DATA
                     case "QryCategory001": ds = Qry.QryCategory001(oArgsRv); break;
 
+                    //QryPostMsg001 -- QUERY PostMsg MODE DATA
+                    case "QryPostMsg001": ds = Qry.QryPostMsg001(oArgsRv); break;
+
+                    //QryPostMsg002 -- QUERY PostMsg MODE DATA
+                    case "QryPostMsg002": ds = Qry.QryPostMsg002(oArgsRv); break;
+
                     #endregion 
                     default: throw new SystemException("Unkown retrieval specifier [ " + sServiceID + " ] !!");
                 }
@@ -320,6 +326,83 @@ namespace ManagerSO
                 if (!CategoryDesc.Equals("")) { sql += " AND CategoryDesc = " + cmn.SQLQ(CategoryDesc); }
                 if (!StatusNO.Equals("")) { sql += " AND StatusNO = " + cmn.SQLQ(StatusNO); }
                 if (ParentID > -1) { sql += " AND ParentID = " + cmn.SQLQ(ParentID); }
+                if (!ORDER_BY.Equals("")) { sql += " Order By " + ORDER_BY; }
+
+                oResult = cmn.CmnRvEnumerate(sql, cmd, oArgsRv.ServiceID, PAGE_INDEX, PAGE_SIZE);
+                return oResult;
+            }
+            #endregion
+
+            #region //QryPostMsg001 -- QUERY PostMsg MODE DATA
+            public DataSet QryPostMsg001(TArgsRV oArgsRv)
+            {
+                OleDbCommand cmd = oArgsRv.Command;
+                qry = oArgsRv.ServiceID;
+                //****************************************************************
+                XmlDocument x = new XmlDocument();
+                x.LoadXml(oArgsRv.Param);
+                int MsgID = cmn.ParserXML(x, "//PostMsg/MsgID", -999);
+                int UserID = cmn.ParserXML(x, "//PostMsg/UserID", -999);
+                int CategoryID = cmn.ParserXML(x, "//PostMsg/CategoryID", -999);
+                string Title = cmn.ParserXML(x, "//PostMsg/Title");
+                string MsgContent = cmn.ParserXML(x, "//PostMsg/MsgContent");
+                string PictureSrc = cmn.ParserXML(x, "//PostMsg/PictureSrc");
+                string StatusNO = cmn.ParserXML(x, "//PostMsg/StatusNO");
+                int PAGE_INDEX = cmn.ParserXML(x, "//PAGE_INFO/PAGE_INDEX", -1, false);
+                int PAGE_SIZE = cmn.ParserXML(x, "//PAGE_INFO/PAGE_SIZE", oArgsRv.PageSize, false);
+                string ORDER_BY = cmn.ParserXML(x, "//PAGE_INFO/ORDER_BY", false);
+                //****************************************************************
+                sql = " Select MsgID,UserID,CategoryID,Title,MsgContent,PictureSrc,ReplyCount,AttentionCount,StatusNO";
+                sql += " From PostMsg";
+                sql += " Where MsgID is not null";
+
+                if (MsgID > -1) { sql += " AND MsgID = " + cmn.SQLQ(MsgID); }
+                if (UserID > -1) { sql += " AND UserID = " + cmn.SQLQ(UserID); }
+                if (CategoryID > -1) { sql += " AND CategoryID = " + cmn.SQLQ(CategoryID); }
+                if (!Title.Equals("")) { sql += " AND Title = " + cmn.SQLQ(Title); }
+                if (!MsgContent.Equals("")) { sql += " AND MsgContent = " + cmn.SQLQ(MsgContent); }
+                if (!PictureSrc.Equals("")) { sql += " AND PictureSrc = " + cmn.SQLQ(PictureSrc); }
+                if (!StatusNO.Equals("")) { sql += " AND StatusNO = " + cmn.SQLQ(StatusNO); }
+                if (!ORDER_BY.Equals("")) { sql += " Order By " + ORDER_BY; }
+
+                oResult = cmn.CmnRvEnumerate(sql, cmd, oArgsRv.ServiceID, PAGE_INDEX, PAGE_SIZE);
+                return oResult;
+            }
+            #endregion
+
+            #region //QryPostMsg002 -- QUERY PostMsg MODE DATA
+            public DataSet QryPostMsg002(TArgsRV oArgsRv)
+            {
+                OleDbCommand cmd = oArgsRv.Command;
+                qry = oArgsRv.ServiceID;
+                //****************************************************************
+                XmlDocument x = new XmlDocument();
+                x.LoadXml(oArgsRv.Param);
+                int MsgID = cmn.ParserXML(x, "//PostMsg/MsgID", -999);
+                int UserID = cmn.ParserXML(x, "//PostMsg/UserID", -999);
+                int CategoryID = cmn.ParserXML(x, "//PostMsg/CategoryID", -999);
+                string Title = cmn.ParserXML(x, "//PostMsg/Title");
+                string MsgContent = cmn.ParserXML(x, "//PostMsg/MsgContent");
+                string PictureSrc = cmn.ParserXML(x, "//PostMsg/PictureSrc");
+                string StatusNO = cmn.ParserXML(x, "//PostMsg/StatusNO");
+                int PAGE_INDEX = cmn.ParserXML(x, "//PAGE_INFO/PAGE_INDEX", -1, false);
+                int PAGE_SIZE = cmn.ParserXML(x, "//PAGE_INFO/PAGE_SIZE", oArgsRv.PageSize, false);
+                string ORDER_BY = cmn.ParserXML(x, "//PAGE_INFO/ORDER_BY", false);
+                //****************************************************************
+                sql = " Select MsgID,a.UserID,c.CategoryID,Title,MsgContent,PictureSrc,a.StatusNO,ReplyCount,AttentionCount,a.AddDateTime";
+                sql += ",b.UserNO,b.UserName,b.IconSrc";
+                sql += ",c.CategoryName,c.ParentID";
+                sql += " From PostMsg a Left join UserInfo b on a.UserID=b.UserID";
+                sql += " Left join Category c on a.CategoryID=c.CategoryID";
+                sql += " Where MsgID is not null";
+
+                if (MsgID > -1) { sql += " AND MsgID = " + cmn.SQLQ(MsgID); }
+                if (UserID > -1) { sql += " AND a.UserID = " + cmn.SQLQ(UserID); }
+                if (CategoryID > -1) { sql += " AND a.CategoryID = " + cmn.SQLQ(CategoryID); }
+                if (!Title.Equals("")) { sql += " AND Title = " + cmn.SQLQ(Title); }
+                if (!MsgContent.Equals("")) { sql += " AND MsgContent = " + cmn.SQLQ(MsgContent); }
+                if (!PictureSrc.Equals("")) { sql += " AND PictureSrc = " + cmn.SQLQ(PictureSrc); }
+                if (!StatusNO.Equals("")) { sql += " AND a.StatusNO = " + cmn.SQLQ(StatusNO); }
                 if (!ORDER_BY.Equals("")) { sql += " Order By " + ORDER_BY; }
 
                 oResult = cmn.CmnRvEnumerate(sql, cmd, oArgsRv.ServiceID, PAGE_INDEX, PAGE_SIZE);

@@ -49,7 +49,7 @@
                     }
                     else
                     {
-                        <li><a href="#" data-toggle="modal" data-target="#modalPost"><i class="icon-user"></i>发表</a></li>
+                        <li><a href="#" id="PostMsg"><i class="icon-user"></i>发表</a></li>
                         <li><a href="@Url.Action("PostHistory","Manager")"><i class="icon-user-md"></i>个人中心</a></li>
                         <li class="divider"></li>
                         <li><a href="javascript:cap_logout();"><i class="icon-key"></i>退出</a></li>
@@ -168,12 +168,19 @@
                             $("#userMenu").children().remove();
                             var html = "<li><a href='#' data-toggle='modal' id='PostMSG'><i class='icon-user'></i>发表</a></li>";
                             html += "<li><a href=\"@Url.Action("PostHistory","Manager")\"><i class='icon-user-md'></i>个人中心</a></li>";
-                            html += "<li class='divider'></li>"
+                            html += "<li class='divider'></li>";
                             html += " <li><a href=\"javascript:cap_logout();\"><i class='icon-key'></i>退出</a></li>";
                             $("#userMenu").append($(html));
                             $("#userdrop .userIcon").prop("src", data.usericon);
                             $("#userdrop .username").text(data.username);
                             $("#modalLogin").modal('hide');
+
+                            $("#PostMSG").click(function () {
+                                cap_clear("#PostMsg-form");
+                                cap_category("@Url.Action("QryCategory001", "Manager")","#cboCategory","","CHOOSE");
+                                $("#modalPostMSG").modal('show');
+                                $("#modalPostMSG .modal-dialog").css("width",($(window).width())*0.9);
+                            });
                         }
                         else if (data.msg == "fail") {
                             $("#modalLogin .alert").show().text('用户名或密码错误');
@@ -263,7 +270,6 @@
                 });
             }
         });
-
 
     });
 

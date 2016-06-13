@@ -85,6 +85,28 @@ namespace FleaMarketMS.Controllers
             userModel.CURR_DOMAIN = "";
             userModel.CURR_PACKAGE = "管理";
             userModel.CURR_PROGRAM = "发布历史";
+
+            int PAGE_INDEX = 1;
+            if (Request["PAGE_INDEX"] != null) { int.TryParse(Request["PAGE_INDEX"], out PAGE_INDEX); }
+            string sParam = "<root><PostMsg>";
+            sParam += "<MsgID>-1</MsgID>";
+            sParam += "<UserID>" + Session["USER_ID"].ToString() + "</UserID>";
+            sParam += "<CategoryID>-1</CategoryID>";
+            sParam += "<Title></Title>";
+            sParam += "<MsgContent></MsgContent>";
+            sParam += "<PictureSrc></PictureSrc>";
+            sParam += "<StatusNO>A</StatusNO>";
+            sParam += "</PostMsg>";
+            sParam += "<PAGE_INFO>";
+            sParam += "<PAGE_INDEX>" + PAGE_INDEX + "</PAGE_INDEX>";
+            sParam += "<PAGE_SIZE>20</PAGE_SIZE>";
+            sParam += "<ORDER_BY>a.AddDateTime DESC</ORDER_BY>";
+            sParam += "</PAGE_INFO>";
+            sParam += "</root>";
+            DataSet oDS = client.ctEnumerateData("ManagerSO.QryPostMsg002", sParam);
+            IEnumerable<PostMsg> postMsgls = oDS.Tables["QryPostMsg002"].TabeToList<PostMsg>();
+            ViewBag.PostMstLst = postMsgls;
+
             return View(userModel);
         }
 
@@ -792,6 +814,40 @@ namespace FleaMarketMS.Controllers
         }
         #endregion
 
+        #region //TxPostMsg001
+        [ValidateInput(false)]
+        public void TxPostMsg001(string TxType, int MsgID, int CategoryID, string Title, string MsgContent, string PictureSrc, string StatusNO)
+        {
+            try
+            {
+                string sParam = "<root><PostMsg>";
+                sParam += "<MsgID>" + MsgID + "</MsgID>";
+                sParam += "<UserID>" + Session["USER_ID"].ToString() + "</UserID>";
+                sParam += "<CategoryID>" + CategoryID + "</CategoryID>";
+                sParam += "<Title>" + Title + "</Title>";
+                sParam += "<MsgContent>" + MsgContent + "</MsgContent>";
+                sParam += "<PictureSrc>" + PictureSrc + "</PictureSrc>";
+                sParam += "<StatusNO>" + StatusNO + "</StatusNO>";
+                sParam += "</PostMsg></root>";
+                switch (TxType)
+                {
+                    case "A": nResult = client.ctPostTxact("ManagerSO.TxPostMsg001", sParam, TxTypeConsts.TxTypeAddNew); break;
+                    case "U": nResult = client.ctPostTxact("ManagerSO.TxPostMsg001", sParam, TxTypeConsts.TxTypeUpdate); break;
+                    case "D": nResult = client.ctPostTxact("ManagerSO.TxPostMsg001", sParam, TxTypeConsts.TxTypeDelete); break;
+                    case "C": nResult = client.ctPostTxact("ManagerSO.TxPostMsg001", sParam, TxTypeConsts.TxTypeChange); break;
+                    default: throw new MyException("transaction type error!");
+                }
+                if (nResult > 0) { res = "{\"status\" : \"success\",\"msg\": \"OK\",\"qrydata\":\"" + nResult + "\"}"; }
+            }
+            catch (Exception e1)
+            {
+                userModel.MESSAGE = e1.Message;
+                string error_message = Microsoft.JScript.GlobalObject.escape(e1.Message);
+                res = "{\"status\" : \"error\",\"msg\": \"error\",\"error_desc\":\"" + error_message + "\"}";
+            }
+            Response.Write(res);
+        }
+        #endregion
         #endregion
 
 

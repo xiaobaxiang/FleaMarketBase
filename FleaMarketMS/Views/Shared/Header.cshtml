@@ -16,7 +16,7 @@
                 <img src="@Url.Content("~/assets/img/logo.gif")" alt="logo" />
                 <strong>实时二手信息</strong>
             </a>
-            <a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation">
+            <a href="#" class="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="菜单展合">
                 <i class="icon-reorder"></i>
             </a>
         </div>
@@ -43,7 +43,7 @@
                 }
                 else
                 {
-                    <li><a href="#" data-toggle="modal" data-target="#modalPost"><i class="icon-user"></i>发表</a></li>
+                    <li><a href="#" id="PostMsg"><i class="icon-user"></i>发表</a></li>
                     <li><a href="@Url.Action("PostHistory","Manager")"><i class="icon-user-md"></i>个人中心</a></li>
                     <li class="divider"></li>
                     <li><a href="javascript:cap_logout();"><i class="icon-key"></i>退出</a></li>
@@ -53,6 +53,3 @@
     </ul>
 </div>
 </header>
-
-
-
